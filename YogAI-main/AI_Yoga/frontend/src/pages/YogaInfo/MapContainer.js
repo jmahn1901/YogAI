@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const { kakao } = window;
 
 let MapContainer = ({ searchPlace }) => {
-    
+
   useEffect(() => {
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 })
     const container = document.getElementById('myMap')
@@ -49,7 +49,7 @@ let MapContainer = ({ searchPlace }) => {
      <div
         id="myMap"
         style={{
-          width: '500px',
+          width: '1000px',
           height: '500px',
         }}>
      </div>
