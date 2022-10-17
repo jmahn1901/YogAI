@@ -11,6 +11,8 @@ import InfoMap from './pages/YogaInfo/InfoMap';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Login/Register";
 
+import List from "./pages/Post/List";
+
 import './App.css'
 
 export default function App() {
@@ -27,6 +29,7 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="Register" element={<Register />} />
 
+        <Route path="community" element={<List />} /> {/* => http://localhost:3000/list  */}
       </Routes>
       <Footer />
     </BrowserRouter>
