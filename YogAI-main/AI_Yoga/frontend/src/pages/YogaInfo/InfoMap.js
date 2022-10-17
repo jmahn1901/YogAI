@@ -1,11 +1,10 @@
-/* eslint-disable */ 
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 const { kakao } = window;
 
 let InfoMap = () => {
-
   const [info, setInfo] = useState();
   const [markers, setMarkers] = useState([]);
   const [map, setMap] = useState();
@@ -49,36 +48,39 @@ let InfoMap = () => {
       >
         <div className="row justify-content-center">
           <h3 style={{ paddingTop: "100px", paddingBottom: "100px" }}>
-            요가학원 찾기의 이름은 가제이다
+            요가학원 찾기
           </h3>
+
           <Map // 로드뷰를 표시할 Container
-        center={{
-          lat: 37.566826,
-          lng: 126.9786567,
-        }}
-        style={{
-          width: "100%",
-          height: "350px",
-        }}
-        level={3}
-        onCreate={setMap}
-      >
-        {markers.map((marker) => (
-          <MapMarker
-            key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
-            position={marker.position}
-            onClick={() => setInfo(marker)}
+            center={{
+              lat: 37.566826,
+              lng: 126.9786567,
+            }}
+            style={{
+              width: "100%",
+              height: "350px",
+            }}
+            level={3}
+            onCreate={setMap}
           >
-            {info && info.content === marker.content && (
-              <div style={{ color: "#000" }}>{marker.content}</div>
-            )}
-          </MapMarker>
-        ))}
-      </Map>
+            {markers.map((marker) => (
+              <MapMarker
+                key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
+                position={marker.position}
+                onClick={() => setInfo(marker)}
+              >
+                {info && info.content === marker.content && (
+                  <div style={{ color: "#000" }}>{marker.content}</div>
+                )}
+              </MapMarker>
+            ))}
+          </Map>
         </div>
       </div>
 
-      
+      <div>
+        
+      </div>
     </>
   );
 };
