@@ -11,7 +11,13 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Login/Register";
 import Home from './pages/Home/Home';
 
+
+import List from "./pages/Post/List";
+
+// import './App.css'
+
 import './App.css';
+
 
 export default function App() {
   return (
@@ -28,6 +34,7 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="Register" element={<Register />} />
 
+        <Route path="community" element={<List />} /> {/* => http://localhost:3000/list  */}
       </Routes>
       <Footer />
     </BrowserRouter>

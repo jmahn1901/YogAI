@@ -71,7 +71,7 @@ const Header = () => {
                 </a>
               </li> */}
               <li>
-                <a href="#about-section" className="nav-link" style={{paddingLeft: "70px"}}>
+                <a href="community" className="nav-link" style={{paddingLeft: "70px"}}>
                   Community
                 </a>
               </li>
