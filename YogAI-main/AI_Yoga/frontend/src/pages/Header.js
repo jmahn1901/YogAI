@@ -14,7 +14,7 @@ const Header = () => {
 
             <ul className="js-clone-nav d-none d-lg-inline-block site-menu float-left">
               <li className="active" style={{paddingLeft: "70px"}}>
-                <a href="#home-section" className="nav-link">
+                <a href="home" className="nav-link">
                   Home
                 </a>
               </li>
