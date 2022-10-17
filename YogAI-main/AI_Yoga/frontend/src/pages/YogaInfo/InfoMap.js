@@ -48,7 +48,7 @@ let InfoMap = () => {
       >
         <div className="row justify-content-center">
           <h3 style={{ paddingTop: "100px", paddingBottom: "100px" }}>
-            요가학원 찾기
+            요가학원 찾기의 이름은 가제이다
           </h3>
 
           <Map // 로드뷰를 표시할 Container
@@ -79,7 +79,7 @@ let InfoMap = () => {
       </div>
 
       <div>
-        
+
       </div>
     </>
   );
