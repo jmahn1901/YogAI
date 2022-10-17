@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-
 import './assets/css/_mixins.css'
 import './assets/css/_site-blocks.css'
 import './assets/css/aos.css'
