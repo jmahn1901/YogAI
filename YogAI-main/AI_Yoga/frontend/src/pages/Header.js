@@ -72,7 +72,7 @@ const Header = () => {
               </li> */}
               <li>
                 <a href="#about-section" className="nav-link" style={{paddingLeft: "70px"}}>
-                  Comunity
+                  Community
                 </a>
               </li>
               <li>
