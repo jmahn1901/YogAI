@@ -29,20 +29,22 @@ let List = () => {
         //     return;
         // }
 
+
         //현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
+
         // setModalData({
         //     ...modalData,
         //     email: cookies.token.email
         // })
 
-        //일기장 리스트를 가져오는 부분
+        // 게시글 목록을 가져오는 부분
         getListDaily().then(res => {
             console.log(res);
             setDailise(res.data.daily);
 
             setPage({
-                ...page, //현재 페이지는 유지
-                totalPage: res.data.totalPage //전체 페이지가 몇개인지 가져옴
+                ...page, // 현재 페이지는 유지
+                totalPage: res.data.totalPage // 전체 페이지가 몇개인지 가져옴
             });
 
         }).catch(err => {
@@ -64,7 +66,7 @@ let List = () => {
     //     console.log(modalData);
     // }, [modalData]);
 
-    //input값을 변경할 때, 각 input name에 맞는 value값을 넣어줌.
+    // input값을 변경할 때, 각 input name에 맞는 value값을 넣어줌.
     let changeModalData = (e) => {
         setModalData({
             ...modalData,

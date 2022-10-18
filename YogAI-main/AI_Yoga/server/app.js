@@ -14,13 +14,17 @@ const app = express();
 
 const PORT = 8080;
 
-// Yoga DB 생성
+
+// Yoga 이름으로 DB 에 테이블 생성 == 초기에는 존재하지 않으므로 생성됨
 mongoose.connect('mongodb://localhost:27017/Yoga');
 
+
+// DB 와 연결 시 콘솔 창에서의 메세지
 mongoose.connection.on('connected', () => {
     console.log('mongodb Connect Success');
 })
 
+// DB 와의 연결 실패시 콘솔창에서의 메세지
 mongoose.connection.on('error', (err) => {
     console.log(err);
 })

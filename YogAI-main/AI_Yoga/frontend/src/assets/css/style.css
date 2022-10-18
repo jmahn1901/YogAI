@@ -250,7 +250,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       .site-nav .site-navigation .site-menu .has-children > a {
         position: relative;
         padding-right: 20px; }
-        .site-nav .site-navigation .site-menu .has-children > a:before {
+        /* .site-nav .site-navigation .site-menu .has-children > a:before {
           position: absolute;
           content: "\e313";
           font-size: 14px;
@@ -259,7 +259,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-          font-family: 'icomoon'; }
+          font-family: 'icomoon'; } */
       .site-nav .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
         opacity: 0;
