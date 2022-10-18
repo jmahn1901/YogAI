@@ -6,7 +6,7 @@ let Create = ({ modalData, changeModalData }) => {
 
     const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
-    //게시글 생성 버튼을 눌렀을때 함수
+    // 게시글 생성 버튼을 눌렀을때 함수 
     let createDaily = async () => {
         if (modalData.title === "") {
             alert("제목을 입력해주세요.");
