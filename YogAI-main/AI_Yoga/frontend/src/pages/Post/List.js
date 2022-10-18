@@ -29,7 +29,9 @@ let List = () => {
         //     return;
         // }
 
-        // 현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
+
+        //현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
+
         // setModalData({
         //     ...modalData,
         //     email: cookies.token.email
@@ -57,7 +59,7 @@ let List = () => {
         title: "",
         content: "",
         url: "",
-        // email: ""
+        email: ""
     });
 
     // useEffect(() => {
@@ -142,7 +144,7 @@ let List = () => {
                                         title: "",
                                         content: "",
                                         url: "",
-                                        // email: cookies.token.email
+                                        email: cookies.token.email
                                     })
                                 }}
                             >일기장 생성</button>
@@ -190,7 +192,7 @@ let List = () => {
                                                                 title: data.title,
                                                                 content: data.content,
                                                                 url: data.url,
-                                                                // email: data.author.email
+                                                                email: data.author.email
                                                             });
                                                         }}
                                                     >수정</button>
