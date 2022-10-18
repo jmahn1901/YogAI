@@ -51,6 +51,9 @@ let MapContainer = ({ searchPlace }) => {
         style={{
           width: '1000px',
           height: '500px',
+          textAlign : "center",
+          justifyContent : "center",
+          padding : "30px 0 30px 0"
         }}>
      </div>
   )

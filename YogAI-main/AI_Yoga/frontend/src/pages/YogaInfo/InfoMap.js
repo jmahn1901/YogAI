@@ -28,18 +28,32 @@ let InfoMap = () => {
         style={{ marginBottom: "100px", width: "center" }}
       >
         <div className="row justify-content-center">
-          <h3 style={{ paddingTop: "100px", paddingBottom: "100px" }}>
-            요가정보 리스트
+          <h3
+            style={{
+              paddingTop: "100px",
+              paddingBottom: "100px",
+              textAlign: "center",
+            }}
+          >
+            요가 학원 찾기
           </h3>
-          <form className="inputForm" onSubmit={handleSubmit}>
-            <input
-              placeholder="검색어를 입력하세요"
-              onChange={onChange}
-              value={InputText}
-            />
-            <button type="submit">검색</button>
-          </form>
-          <MapContainer searchPlace={Place} />
+          <div style={{ background : "#fafafa", boxShadow : "20px 20px 0 0 #107be9", overflow : "hidden", borderRadius: "20px"}}>
+            <form
+              className="inputForm"
+              onSubmit={handleSubmit}
+              style={{textAlign: "center", padding: "30px 0 30px" }}
+            >
+              <input
+                placeholder="요가학원을 입력하세요"
+                onChange={onChange}
+                value={InputText}
+              />
+              <button type="submit">검색</button>
+            </form>
+            <div>
+              <MapContainer searchPlace={Place} />
+            </div>
+          </div>
         </div>
       </div>
     </>

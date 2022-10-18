@@ -25,10 +25,10 @@ let InfoPose = () => {
         style={{ marginBottom: "100px", width: "center" }}
       >
         <div className="row justify-content-center">
-          <h3 style={{ paddingTop: "100px", paddingBottom: "100px" }}>
+          <h3 style={{ paddingTop: "100px", paddingBottom: "100px", textAlign :"center"}}>
             요가정보 리스트
           </h3>
-          
+
           <Row className="g-4">
             {Array.from({ length: 4 }).map((_, idx) => (
               <Col>
@@ -81,7 +81,7 @@ let InfoPose = () => {
             ))}
           </Row>
 
-          <Pagination style={{ padding: "50px 0px 50px 0px" }}>
+          <Pagination style={{ padding: "50px 0px 50px 0px",justifyContent : "center"}}>
             <Pagination.Prev />
             <Pagination.Item active>{1}</Pagination.Item>
             <Pagination.Item>{2}</Pagination.Item>
