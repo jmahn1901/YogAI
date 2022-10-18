@@ -30,10 +30,10 @@ let List = () => {
         // }
 
         //현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
-        setModalData({
-            ...modalData,
-            email: cookies.token.email
-        })
+        // setModalData({
+        //     ...modalData,
+        //     email: cookies.token.email
+        // })
 
         //일기장 리스트를 가져오는 부분
         getListDaily().then(res => {

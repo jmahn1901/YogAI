@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-// const userRouter = require("./routes/user/user");
+const userRouter = require("./routes/user/user");
 // const dailyRouter = require("./routes/daily/daily");
 // const authMiddleware = require("./utils/authMiddleware");
 
@@ -14,7 +14,8 @@ const app = express();
 
 const PORT = 8080;
 
-mongoose.connect('mongodb://localhost:27017/daily');
+// Yoga DB 생성
+mongoose.connect('mongodb://localhost:27017/Yoga');
 
 mongoose.connection.on('connected', () => {
     console.log('mongodb Connect Success');
@@ -30,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use('/oauth', oauthRouter) // 로그인 기능이기에 순서 잘 지키기
 
-// app.use("/user", userRouter);
+app.use("/user", userRouter);
 // app.use("/daily", authMiddleware, dailyRouter);
 
 app.listen(PORT, () => {

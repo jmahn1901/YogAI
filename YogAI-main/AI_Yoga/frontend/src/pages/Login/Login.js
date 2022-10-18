@@ -1,4 +1,11 @@
+import axios from "axios";
 import { useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+
+const server = {
+  "url": "http://localhost:8080"
+}
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -6,9 +13,18 @@ const Login = () => {
     password: "",
   });
 
+  // 쿠키
+  const [cookies, setCookie, removeCookie] = useCookies(['cookie'])
+
+  //로그인이 제대로 진행되지 않았을 경우, 에러 메시지를 보여주는 부분
+  const [errorMsg, setErrorMsg] = useState("");
+
+  // navigate 사용
+  const navigate = useNavigate();
+
   // 더미 데이터
-  const dummyEmail = "test@test.com";
-  const dummyPwd = "Rltwldhr77@";
+  // const dummyEmail = "test@test.com";
+  // const dummyPwd = "Rltwldhr77@";
 
   const changeInputData = (e) => {
     // e => element  요소 그자체를 가져온거, 요소는 input
@@ -39,11 +55,14 @@ const Login = () => {
 
     console.log(loginData);
     
-    if (loginData.email === dummyEmail && loginData.password === dummyPwd) {
-      alert("로그인 성공!");
-    } else {
-      alert("비번이나 아이디가 틀렷네영..!!ㅋㅋ");
-    }
+    // 더미 데이터 체크
+    // if (loginData.email === dummyEmail && loginData.password === dummyPwd) {
+    //   alert("로그인 성공!");
+    // } else {
+    //   alert("비번이나 아이디가 틀렷네영..!!ㅋㅋ");
+    // }
+
+    return axios.post(server.url + '/user/login', loginData)
   };
 
   return (
@@ -95,7 +114,19 @@ const Login = () => {
                     type="button"
                     className="btn btn-primary btn-block"
                     value="Sign in"
-                    onClick={loginFunction}
+                    onClick={() => {
+                      loginFunction().then((res) => {
+                        // 체크용
+                        console.log(res);
+                        if (res.data.status) {
+                          setCookie("cookie", res.data, { path: "/" })
+                          navigate('/');
+                        }
+
+                      }).catch(err => {
+                        console.log(err);
+                      })
+                    }}
                   />
                 </div>
               </form>
