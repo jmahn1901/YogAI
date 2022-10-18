@@ -4,7 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const userRouter = require("./routes/user/user");
-// const dailyRouter = require("./routes/daily/daily");
+const dailyRouter = require("./routes/post/post");
 // const authMiddleware = require("./utils/authMiddleware");
 
 // 소셜로그인
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('/oauth', oauthRouter) // 로그인 기능이기에 순서 잘 지키기
 
 app.use("/user", userRouter);
-// app.use("/daily", authMiddleware, dailyRouter);
+app.use("/daily", dailyRouter); // authMiddleware,
 
 app.listen(PORT, () => {
     console.log(`open server : ${PORT}`);
