@@ -7,13 +7,13 @@ import traingle from './traingle.jpg'
 import shoulderstand from './shoulderstand.jpg'
 
 export const poseImages = {
-    Tree: tree,
-    Cobra: cobra,
-    Dog: dog,
-    Warrior: warrior,
-    Chair: chair,
-    Traingle: traingle,
-    Shoulderstand: shoulderstand
+    나무: tree,
+    코브라: cobra,
+    개: dog,
+    전사: warrior,
+    의자: chair,
+    삼각: traingle,
+    어깨로서기: shoulderstand
 } 
 
 

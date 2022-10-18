@@ -17,8 +17,8 @@ import { drawPoint, drawSegment } from '../../utils/helper'
 
 let skeletonColor = 'rgb(255,255,255)'
 let poseList = [
-  'Tree', 'Chair', 'Cobra', 'Warrior', 'Dog',
-  'Shoulderstand', 'Traingle'
+  '나무', '의자', '코브라', '전사', '개',
+  '어깨로서기', '삼각'
 ]
 
 let interval
@@ -37,7 +37,7 @@ function Yoga() {
   const [currentTime, setCurrentTime] = useState(0)
   const [poseTime, setPoseTime] = useState(0)
   const [bestPerform, setBestPerform] = useState(0)
-  const [currentPose, setCurrentPose] = useState('Tree')
+  const [currentPose, setCurrentPose] = useState('나무')
   const [isStartPose, setIsStartPose] = useState(false)
 
   
@@ -59,14 +59,14 @@ function Yoga() {
   }, [currentPose])
 
   const CLASS_NO = {
-    Chair: 0,
-    Cobra: 1,
-    Dog: 2,
+    의자: 0,
+    코브라: 1,
+    개: 2,
     No_Pose: 3,
-    Shoulderstand: 4,
-    Traingle: 5,
-    Tree: 6,
-    Warrior: 7,
+    어깨로서기: 4,
+    삼각: 5,
+    나무: 6,
+    전사: 7,
   }
 
   function get_center_point(landmarks, left_bodypart, right_bodypart) {
