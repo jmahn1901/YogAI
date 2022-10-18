@@ -9,7 +9,7 @@ module.exports = new Schema({
     url: String,
     author: {
         type: Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Member",
         required: true
     },
 }, {

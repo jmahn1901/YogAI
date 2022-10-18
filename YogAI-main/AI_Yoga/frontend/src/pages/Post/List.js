@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import Create from "./Create";
 import Detail from "./Detail";
 import { useCookies } from "react-cookie";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import server from "./../../config/server.json";
 import moment from "moment";
 
 let List = () => {
 
-    const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-    // const navigate = useNavigate();
+    const [cookies, setCookie, removeCookie] = useCookies(["cookie"]);
+    const navigate = useNavigate();
 
     //게시글 리스트를 담아두는 곳
     const [dailise, setDailise] = useState([]);
@@ -22,18 +22,20 @@ let List = () => {
     });
 
     useEffect(() => {
-        //리스트 페이지로 들어 올 경우, 로그인 되어있는 사용자인지 확인하는 부분.
-        // if (cookies.token === undefined) {
-        //     alert("로그인이 필요합니다.");
-        //     navigate("/");
-        //     return;
-        // }
+        // 리스트 페이지로 들어 올 경우, 로그인 되어있는 사용자인지 확인하는 부분.
+        if (cookies.cookie === undefined) {
+            alert("로그인이 필요합니다.");
+            // navigate("/");
+            return;
+        }
 
-        // 현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
-        // setModalData({
-        //     ...modalData,
-        //     email: cookies.token.email
-        // })
+
+        //현재 로그인되어있는 정보의 이메일을 먼저 modalData에 담아줌
+
+        setModalData({
+            ...modalData,
+            email: cookies.cookie.email
+        })
 
         // 게시글 목록을 가져오는 부분
         getListDaily().then(res => {
@@ -57,12 +59,12 @@ let List = () => {
         title: "",
         content: "",
         url: "",
-        // email: ""
+        email: ""
     });
 
-    // useEffect(() => {
-    //     console.log(modalData);
-    // }, [modalData]);
+    useEffect(() => {
+        console.log(modalData);
+    }, [modalData]);
 
     // input값을 변경할 때, 각 input name에 맞는 value값을 넣어줌.
     let changeModalData = (e) => {
@@ -76,7 +78,7 @@ let List = () => {
     let getListDaily = async () => {
         return await axios.get(server.url + '/daily', {
             headers: {
-                accessToken: cookies.token.accessToken
+                accesscookie: cookies.cookie.accesscookie
             }
         });
     }
@@ -87,7 +89,7 @@ let List = () => {
             return await //http://localhost:8080/daily/shortId/delete
                 axios.post(`${server.url}/daily/${shortId}/delete`, {}, {
                     headers: {
-                        accessToken: cookies.token.accessToken
+                        accesscookie: cookies.cookie.accesscookie
                     }
                 });
         }
@@ -110,7 +112,7 @@ let List = () => {
     let changePage = (page) => {
         axios.get(`${server.url}/daily?page=${page}&perPage=6`, {
             headers: {
-                accessToken: cookies.token.accessToken
+                accesscookie: cookies.cookie.accesscookie
             }
         }).then(res => {
             console.log(res);
@@ -142,7 +144,7 @@ let List = () => {
                                         title: "",
                                         content: "",
                                         url: "",
-                                        // email: cookies.token.email
+                                        email: cookies.cookie.email
                                     })
                                 }}
                             >일기장 생성</button>
@@ -190,7 +192,7 @@ let List = () => {
                                                                 title: data.title,
                                                                 content: data.content,
                                                                 url: data.url,
-                                                                // email: data.author.email
+                                                                email: data.author.email
                                                             });
                                                         }}
                                                     >수정</button>

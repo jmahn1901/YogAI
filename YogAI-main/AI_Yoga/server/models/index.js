@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+
 const PostSchema = require("./schemas/post");
-const UserSchema = require("./schemas/user");
+const MemberSchema = require("./schemas/member");
 
 exports.Daily = mongoose.model('Daily', PostSchema);
-exports.User = mongoose.model('User', UserSchema);
+exports.Member = mongoose.model('Member', MemberSchema);
+

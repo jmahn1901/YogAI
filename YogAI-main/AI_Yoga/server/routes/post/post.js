@@ -1,19 +1,19 @@
 const { Router } = require("express");
 const router = Router();
 const { Daily } = require("./../../models");
-const { User } = require("./../../models");
+const { Member } = require("./../../models");
 
 //일기장 생성
 //http://localhost:8080/daily/ 
 router.post("/", async (req, res, next) => {
-    console.log(req.body);
     let { title, content, url, email } = req.body;
 
     try {
-
+    console.log(req.body);
+        
         // 일기장 생성하기전에 작성자를 같이 담아주기 위해서 email에 맞는 정보를 가지고 있는,
         // 회원의 데이터를 가져옴 == 누가 작성했는지 email 을 가져와 확인
-        const authData = await User.findOne({ email });
+        const authData = await Member.findOne({ email });
 
         //회원의 정보와 함께 저장함
         await Daily.create({
@@ -29,6 +29,7 @@ router.post("/", async (req, res, next) => {
         })
 
     } catch (e) {
+        
         next(e);
     }
 
