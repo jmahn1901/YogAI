@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 
 let Create = ({ modalData, changeModalData }) => {
 
-    const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+    const [cookies, setCookie, removeCookie] = useCookies(["cookie"]);
 
     // 게시글 생성 버튼을 눌렀을때 함수 
     let createDaily = async () => {
@@ -20,7 +20,7 @@ let Create = ({ modalData, changeModalData }) => {
         return await
             axios.post(server.url + '/daily', modalData, {
                 headers: {
-                    accessToken: cookies.token.accessToken
+                    accessToken: cookies.cookie.accessToken
                 }
             });
     }
@@ -39,7 +39,7 @@ let Create = ({ modalData, changeModalData }) => {
             axios.post(`${server.url}/daily/${modalData.shortId}/update`,
                 modalData, {
                 headers: {
-                    accessToken: cookies.token.accessToken
+                    accessToken: cookies.cookie.accessToken
                 }
             });
     }
