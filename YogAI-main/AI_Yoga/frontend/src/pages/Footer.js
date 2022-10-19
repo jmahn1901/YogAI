@@ -20,43 +20,30 @@ const Footer = () => {
                 <div className="widget">
                   {/* 깃허브 주소용 아이콘 코드 */}
                   <h3>Follow Us</h3>
-                  <ul className="list-unstyled social">
+                  <ul className="list-unstyled social" style={{display: "flex", gap: "20px", borderRadius: "30px"}}>
                     <li>
-                      <a href="https://github.com/swon95">
-                        <span className="icon-instagram">
-                          <img src="https://i0.wp.com/worldyogaforum.com/wp-content/uploads/2022/04/34a.png?resize=1024%2C845&ssl=1" alt="Image" className="img-fluid" />
-                        </span>
+                      <a href="https://github.com/swon95%22%3E">
+                        <img style={{height: "50px"}} src= "https://avatars.githubusercontent.com/u/96659041?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/goodsosbva">
-                        <span className="icon-twitter">
-                        <img src="https://avatars.githubusercontent.com/u/62534722?v=4" alt="Image" className="img-fluid"/>
-                        </span>
+                      <a href="https://github.com/goodsosbva%22%3E">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/62534722?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/zkdk1241">
-                        <span className="icon-facebook">
-                        <img src="https://avatars.githubusercontent.com/u/47853679?v=4" alt="Image" className="img-fluid" />
-
-                        </span>
+                      <a href="https://github.com/zkdk1241%22%3E">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/47853679?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/jmahn1901">
-                        <span className="icon-linkedin">
-                        <img src="https://avatars.githubusercontent.com/u/72716200?v=4" alt="Image" className="img-fluid" />
-
-                        </span>
+                      <a href="https://github.com/jmahn1901%22%3E">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/72716200?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/hidihi">
-                        <span className="icon-pinterest">
-                        <img src="https://avatars.githubusercontent.com/u/90600309?v=4" alt="Image" className="img-fluid" />
-
-                        </span>
+                      <a href="https://github.com/hidihi%22%3E">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/90600309?v=4%22%3E" />
                       </a>
                     </li>
                     {/* <li>
