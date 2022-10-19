@@ -1,6 +1,8 @@
 .instructions-list {
     width: 40%;
     border-radius: 8px;
+    position: relative;
+    top:  60px;
     border: 2px solid rgba(0, 0, 0, 0.2);
     padding: 10px;
     margin-top: 10px;
@@ -23,5 +25,7 @@
     height: 400px;
     aspect-ratio: 1;
     border-radius: 15px;
+    position: relative;
+    top: 60px;
 
 }

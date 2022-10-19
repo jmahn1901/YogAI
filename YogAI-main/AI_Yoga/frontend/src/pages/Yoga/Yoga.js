@@ -39,6 +39,7 @@ function Yoga() {
   const [bestPerform, setBestPerform] = useState(0)
   const [currentPose, setCurrentPose] = useState('나무')
   const [isStartPose, setIsStartPose] = useState(false)
+  const [isgoodPose, setIsgoodPose] = useState(false)
 
   
   useEffect(() => {
@@ -165,6 +166,7 @@ function Yoga() {
         }) 
         if(notDetected > 4) {
           skeletonColor = 'rgb(255,255,255)'
+          setIsgoodPose(false)
           return
         }
         const processedInput = landmarks_to_embedding(input)
@@ -182,11 +184,13 @@ function Yoga() {
             }
             setCurrentTime(new Date(Date()).getTime()) 
             skeletonColor = 'rgb(0,255,0)'
+            setIsgoodPose(true)
           } else {
             flag = false
             skeletonColor = 'rgb(255,255,255)'
             countAudio.pause()
             countAudio.currentTime = 0
+            setIsgoodPose(false)
           }
         })
       } catch(err) {
@@ -214,11 +218,22 @@ function Yoga() {
       <div className="yoga-container">
         <div className="performance-container">
             <div className="pose-performance">
-              <h4>Pose Time: {poseTime} s</h4>
+              <h4>Pose Time: {poseTime} s   {"\u00A0"} {"\u00A0"} {"\u00A0"}  Best: {bestPerform} s</h4>
+
             </div>
-            <div className="pose-performance">
+            <div className="pose-performance-comment">
+              <h8>
+              {
+                                    (!isgoodPose) ? (<span className="pose-comment">포즈를 제대로 취해보세요!</span>) : (
+                                        <span className="pose-comment">매우 잘 하고 있어요!</span>
+                                    )
+                                }
+              </h8>
+
+            </div>
+            {/* <div className="pose-performance">
               <h4>Best: {bestPerform} s</h4>
-            </div>
+            </div> */}
           </div>
         <div>
           
@@ -257,7 +272,7 @@ function Yoga() {
         </div>
         <button
           onClick={stopPose}
-          className="secondary-btn"    
+          className="secondary-btn"  id="stop-btn"  
         >Stop Pose</button>
       </div>
     )
