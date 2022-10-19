@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('/oauth', oauthRouter) // 로그인 기능이기에 순서 잘 지키기
 
 app.use("/user", userRouter);
-app.use("/daily", dailyRouter); // authMiddleware,
+app.use("/community", dailyRouter); // authMiddleware,
 
 app.listen(PORT, () => {
     console.log(`open server : ${PORT}`);
