@@ -2,13 +2,29 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
+
 let MapContainer = ({ searchPlace }) => {
+
+  
 
   useEffect(() => {
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 })
     const container = document.getElementById('myMap')
+
+
+    // let componentDidMount = () => {
+    //   navigator.geolocation.getCurrentPosition(function(position) {
+    //     console.log("Latitude is :", position.coords.latitude);
+    //     console.log("Longitude is :", position.coords.longitude);
+    //   });
+    // };
+
+
     const options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      // center: new kakao.maps.LatLng(33.450701, 126.570667),
+      center : new kakao.maps.LatLng(37.473889,127.0292881),
+      // center : locPosition,
+      // center : new kakao.maps.LatLng(position.coords.latitude,position.coords.longitude),
       level: 3,
     }
     const map = new kakao.maps.Map(container, options)
@@ -51,6 +67,9 @@ let MapContainer = ({ searchPlace }) => {
         style={{
           width: '1000px',
           height: '500px',
+          textAlign : "center",
+          justifyContent : "center",
+          padding : "30px 0 30px 0"
         }}>
      </div>
   )
