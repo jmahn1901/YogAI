@@ -11,11 +11,16 @@ import './assets/css/jquery.fancybox.min.css'
 import './assets/css/owl.carousel.min.css'
 import './assets/css/owl.theme.default.min.css'
 import './assets/css/style.css'
+// import './fonts/icomoon/style.css'
+// import './fonts/flaticon/font/flaticon.css'
+
 
 ReactDOM.render(
 
+
     <App />,
   document.getElementById('root')
+
 );
 
 

@@ -4,7 +4,9 @@
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */
+
 body {
+
   font-family: "Work Sans", sans-serif;
   line-height: 1.6;
   background: #ffffff;
@@ -29,6 +31,9 @@ body {
   body.offcanvas-menu:before {
     opacity: 1;
     visibility: visible; }
+
+ 
+ 
 
 .text-black {
   color: #000000 !important; }
