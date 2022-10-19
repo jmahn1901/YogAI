@@ -6,7 +6,9 @@ let Create = ({ modalData, changeModalData }) => {
 
     const [cookies, setCookie, removeCookie] = useCookies(["cookie"]);
 
-    // 게시글 생성 버튼을 눌렀을때 함수 
+console.log(modalData)
+    
+// 게시글 생성 버튼을 눌렀을때 함수 
     let createDaily = async () => {
         if (modalData.title === "") {
             alert("제목을 입력해주세요.");
@@ -18,7 +20,7 @@ let Create = ({ modalData, changeModalData }) => {
         }
 
         return await
-            axios.post(server.url + '/daily', modalData, {
+            axios.post(server.url + '/community', modalData, {
                 headers: {
                     accessToken: cookies.cookie.accessToken
                 }
@@ -35,8 +37,13 @@ let Create = ({ modalData, changeModalData }) => {
             alert("내용을 입력해주세요.");
             return;
         }
-        return await // http://localhost:8080/daily/shortId/update
-            axios.post(`${server.url}/daily/${modalData.shortId}/update`,
+
+        // shortId 값 확인
+        console.log(modalData.shortId)
+
+
+        return await // http://localhost:8080/community/shortId/update
+            axios.post(`${server.url}/community/${modalData.shortId}/update`,
                 modalData, {
                 headers: {
                     accessToken: cookies.cookie.accessToken
