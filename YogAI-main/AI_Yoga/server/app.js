@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const userRouter = require("./routes/user/user");
 const dailyRouter = require("./routes/post/post");
+const infoRouter = require("./routes/info/yogainfo");
+
 // const authMiddleware = require("./utils/authMiddleware");
 
 // 소셜로그인
@@ -37,6 +39,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/user", userRouter);
 app.use("/daily", dailyRouter); // authMiddleware,
+app.use("/infopose", infoRouter);
+
 
 app.listen(PORT, () => {
     console.log(`open server : ${PORT}`);
