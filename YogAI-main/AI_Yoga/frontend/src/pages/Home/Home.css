@@ -86,3 +86,8 @@ body::-webkit-scrollbar {
     border-color: white;
     color: black;
 }
+
+.d-block {
+    height: 25px;
+    width: 300px;
+  }
