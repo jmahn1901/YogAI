@@ -4,7 +4,7 @@ const { Daily } = require("./../../models");
 const { Member } = require("./../../models");
 
 //일기장 생성
-//http://localhost:8080/daily/ 
+//http://localhost:8080/community/ 
 router.post("/", async (req, res, next) => {
     let { title, content, url, email } = req.body;
 
@@ -75,7 +75,7 @@ router.get("/", async (req, res, next) => {
 });
 
 //게시글 수정
-//http://localhost:8080/daily/shortId/update
+//http://localhost:8080/community/shortId/update
 router.post("/:shortId/update", async (req, res, next) => {
     let { shortId } = req.params;
     let { title, content, url } = req.body;
@@ -101,7 +101,7 @@ router.post("/:shortId/update", async (req, res, next) => {
 });
 
 //일기장 삭제
-//http://localhost:8080/daily/shortId/delete
+//http://localhost:8080/community/shortId/delete
 router.post("/:shortId/delete", async (req, res, next) => {
     let { shortId } = req.params;
     try {

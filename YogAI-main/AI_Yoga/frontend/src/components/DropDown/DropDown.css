@@ -6,6 +6,9 @@
 } */
 #pose-dropdown-btn {
     width: 400px;
+    position: relative;
+    top: 40px;
+    font-size: 20px;
 }
 
 

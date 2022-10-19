@@ -63,7 +63,7 @@ let InfoPose = () => {
   }
 
   return (
-    <>
+    <div className="color bg-light">
       <div
         className="container"
         style={{ marginBottom: "100px", width: "center" }}
@@ -222,7 +222,7 @@ let InfoPose = () => {
                 </div> */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

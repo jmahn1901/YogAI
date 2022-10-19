@@ -22,11 +22,12 @@ let InfoMap = () => {
   };
 
   return (
-    <>
+    <div className="color bg-light" >
       <div
         className="container"
         style={{ marginBottom: "100px", width: "center" }}
       >
+
         <div className="row justify-content-center">
           <h3
             style={{
@@ -36,6 +37,7 @@ let InfoMap = () => {
             }}
           >
             요가 학원 찾기
+
           </h3>
           <div style={{ background : "#fafafa", boxShadow : "20px 20px 0 0 #107be9", overflow : "hidden", borderRadius: "20px"}}>
             <form
@@ -56,7 +58,7 @@ let InfoMap = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
