@@ -21,30 +21,30 @@ const Footer = () => {
                 <div className="widget">
                   {/* 깃허브 주소용 아이콘 코드 */}
                   <h3>Follow Us</h3>
-                  <ul className="list-unstyled social">
+                  <ul className="list-unstyled social" style={{display: "flex", gap: "20px", borderRadius: "30px"}}>
                     <li>
-                      <a href="#!">
-                        <span className="icon-instagram"></span>
+                      <a href="https://github.com/swon95">
+                        <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/96659041?v=4"></img>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-twitter"></span>
+                      <a href="https://github.com/goodsosbva">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/62534722?v=4"></img>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-facebook"></span>
+                      <a href="https://github.com/zkdk1241">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/47853679?v=4"></img>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-linkedin"></span>
+                      <a href="https://github.com/jmahn1901">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/72716200?v=4"></img>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-pinterest"></span>
+                      <a href="https://github.com/hidihi">
+                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/90600309?v=4"></img>
                       </a>
                     </li>
                     {/* <li>

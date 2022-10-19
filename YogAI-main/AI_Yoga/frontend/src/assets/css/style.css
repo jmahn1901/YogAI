@@ -114,7 +114,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .gutter-v1 {
   margin-right: -20px;
   margin-left: -20px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .gutter-v1 {
       margin-left: -15px;
       margin-right: -15px; } }
@@ -122,7 +122,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .gutter-v1 > [class*="col-"] {
     padding-right: 20px;
     padding-left: 20px; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .gutter-v1 > .col,
       .gutter-v1 > [class*="col-"] {
         padding-right: 15px;
@@ -131,7 +131,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .gutter-v2 {
   margin-right: -5px;
   margin-left: -5px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .gutter-v2 {
       margin-left: -15px;
       margin-right: -15px; } }
@@ -139,7 +139,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .gutter-v2 > [class*="col-"] {
     padding-right: 5px;
     padding-left: 5px; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .gutter-v2 > .col,
       .gutter-v2 > [class*="col-"] {
         padding-right: 15px;
@@ -148,7 +148,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .gutter-v3 {
   margin-right: -40px;
   margin-left: -40px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .gutter-v3 {
       margin-left: -15px;
       margin-right: -15px; } }
@@ -156,7 +156,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .gutter-v3 > [class*="col-"] {
     padding-right: 40px;
     padding-left: 40px; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .gutter-v3 > .col,
       .gutter-v3 > [class*="col-"] {
         padding-right: 15px;
@@ -638,7 +638,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   position: relative; }
   .untree_co-hero, .untree_co-hero > .container > .row {
     padding: 6rem 0; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .untree_co-hero {
       text-align: center; } }
   .untree_co-hero .heading {
@@ -665,7 +665,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .untree_co-hero .intro {
     position: relative;
     z-index: 2; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .untree_co-hero .intro {
         padding-right: 0; } }
   .untree_co-hero .excerpt {
@@ -674,7 +674,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .untree_co-section {
   padding: 100px 0;
   position: relative; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .untree_co-section {
       padding: 50px 0; } }
   .untree_co-section .heading {
@@ -683,7 +683,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     font-weight: 600; }
     .untree_co-section .heading strong {
       font-weight: 700; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .untree_co-section .heading {
         font-size: 28px; } }
     .untree_co-section .heading.border-b {
@@ -809,11 +809,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .pricing-title {
   margin-bottom: 40px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .pricing-title {
       margin-bottom: 30px; } }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1200px) {
   .pricing {
     margin-bottom: 30px; } }
 
@@ -905,7 +905,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     top: -10px;
     -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05);
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05); }
-    @media (max-width: 991.98px) {
+    @media (max-width: 1200px) {
       .news-item:hover, .news-item:active, .news-item:focus {
         top: 0px; } }
 
@@ -947,7 +947,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .owl-2-slider .owl-dots {
   position: absolute;
   margin-top: 20px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1200px) {
     .owl-2-slider .owl-dots {
       margin-top: 0px; } }
 

@@ -1,6 +1,9 @@
 import imgYoga from "./../assets/images/yogaLogo.png";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import $ from "jquery";
+import { useEffect } from "react";
+import "./Header.css";
 
 const Header = () => {
   // 쿠키
@@ -14,21 +17,48 @@ const Header = () => {
     navigate("/");
   };
 
+  // var nav = $('.content-nav');
+  useEffect(() => {
+    $(window).scroll(function () {
+      var windowpos = $(window).scrollTop();
+      var navbar = $(".site-nav");
+
+      console.log(navbar);
+
+      // if win >= navbar and not already a sticky
+      if (
+        windowpos >= navbar.position().top &&
+        !navbar.hasClass("navbar-fixed-top")
+      ) {
+        navbar.addClass("navbar-fixed-top");
+
+        // if win <= navbar and is a sticky
+      } else if (
+        windowpos <= navbar.position().top &&
+        navbar.hasClass("navbar-fixed-top")
+      ) {
+        navbar.removeClass("navbar-fixed-top");
+      }
+    });
+  });
+
   return (
     <>
       <nav
         className="site-nav dark js-site-navbar mb-5 site-navbar-target"
-        style={{ position: "relative" }}
+        // style={{ position: "fixed", background: "white" }}
       >
         <div className="container">
           <div className="site-navigation">
             {/* 헤더 이미지 코드 - khs */}
-            <img
-              className="logo m-0 float-left"
-              style={{ width: "100px", height: "50px" }}
-              alt="yogaLog"
-              src={imgYoga}
-            />
+            <a href="/">
+              <img
+                className="logo m-0 float-left"
+                style={{ width: "100px", height: "50px" }}
+                alt="yogaLog"
+                src={imgYoga}
+              />
+            </a>
             {/* <a href="index.html" className="logo m-0 float-left">
               yogaA!<span className="text-primary"></span>
             </a> */}
