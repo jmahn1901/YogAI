@@ -1,13 +1,19 @@
 import {useState, useEffect} from 'react'
+import axios from 'axios'
 
+const server = {
+  "url": "http://localhost:8080"
+}
 
 const Register = () => {
-  const [signUnData, setSignData] = useState({
+  const [registerData, setRegisterData] = useState({
     email: "",
     nickname: "",
     password: "",
     repassword: ""
   })
+
+  const [errorMsg, setErrorMsg] = useState("");
 
   // input에 데이터를 입력할때마다 singUpData가 변경되는걸 콘솔로 찍어서 보기위해
   // useEffect(() => {
@@ -16,14 +22,14 @@ const Register = () => {
 
   const changeInputData = (e) => {
       // e => element  요소 그자체를 가져온거, 요소는 input 
-      setSignData({
-          ...signUnData,
+      setRegisterData({
+          ...registerData,
           [e.target.name]: e.target.value
       });
   
   }
 
-  const signInFunction = () => {
+  const registerFunction = () => {
     const emailRegex =
       /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     
@@ -31,16 +37,16 @@ const Register = () => {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&#]{8,}$/;
     
     
-    const emailValueCheck = emailRegex.test(signUnData.email);
-    const passwordValueCheck1 = passwordRegex.test(signUnData.password);
-    const passwordValueCheck2 = passwordRegex.test(signUnData.repassword);
+    const emailValueCheck = emailRegex.test(registerData.email);
+    const passwordValueCheck1 = passwordRegex.test(registerData.password);
+    const passwordValueCheck2 = passwordRegex.test(registerData.repassword);
 
     
     if (!emailValueCheck) {
       alert("이메일 제대로 입력 좀...")
       return
     }
-    else if (signUnData.nickname.length === 0) {
+    else if (registerData.nickname === undefined || registerData.nickname.length === 0) {
       alert("닉네임 한글자라도 좀...")
     }
     else if (!passwordValueCheck1) {
@@ -52,18 +58,14 @@ const Register = () => {
       alert("2차 pwd 제대로 입력 좀...")
       return
     }
-    else if (signUnData.password !== signUnData.repassword) {
+    else if (registerData.password !== registerData.repassword) {
       alert("1차 비번이랑 2차 비번이랑 달라용 호호홍~")
       return
     }
 
-    console.log(signUnData);
-    setSignData({
-      email: "",
-      password: "",
-      rePassword: "",
-      name: ""
-    })
+    console.log(registerData);
+    // axios.get(url,[,config])	
+    return axios.post(server.url + '/user/register', registerData)
   }
  
   return (
@@ -82,19 +84,22 @@ const Register = () => {
             <form action="#">
               <div class="form-field">
                 <label htmlFor="email">이메일</label>
-                <input type="email" class="form-control" value={signUnData.email} onChange={changeInputData} name="email" id="email" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="email" class="form-control" value={registerData.email} onChange={changeInputData} name="email" id="email" style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field">
                 <label htmlFor="nickName">닉네임</label>
-                <input type="text" class="form-control" value={signUnData.nickname} onChange={changeInputData} name="nickname" id="nickName" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="text" class="form-control" value={registerData.nickname} onChange={changeInputData} name="nickname" id="nickName" style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field">
                 <label htmlFor="password">비밀번호</label>
-                <input type="password" class="form-control" value={signUnData.password} onChange={changeInputData} name="password" id="password" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="password" class="form-control" value={registerData.password} onChange={changeInputData} name="password" id="password" style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field" style={{paddingBottom: "30px"}}>
                 <label htmlFor="rePassword">비밀번호 확인</label>
-                <input type="password" class="form-control" value={signUnData.repassword} onChange={changeInputData} name="repassword" id="rePassword" style={{marginTop: "10px", marginBottom: "5px"}} />
+                <input type="password" class="form-control" value={registerData.repassword} onChange={changeInputData} name="repassword" id="rePassword" style={{marginTop: "10px", marginBottom: "5px"}} />
+              </div>
+              <div className="mb-3">
+                    <p className="text-dark">{errorMsg}</p>
               </div>
               <div class="form-field">
                 <input
@@ -102,10 +107,33 @@ const Register = () => {
                   class="btn btn-primary btn-block"
                   value="Sign in"
                   onClick={() => {
-                    signInFunction()
-                  }}
+                    registerFunction().then((res) => {
+                      console.log(res);
+                      if (res.data.status) {
+                        alert(res.data.message);
+                        // window.location.reload();
+                      }
+                      else { 
+                      //에러 메시지를 보여주고
+                      setErrorMsg(res.data.message);
+                      //input의 모든 데이터를 없앰
+                      setRegisterData({
+                        email: "",
+                        password: "",
+                        repassword: "",
+                        nickname: ""
+                      })
+                      //email input에 포커스
+                      document.getElementById("email").focus();
+                    }
+                    }).catch(e => {
+                      console.log(e)
+                      
+                    })
+
+                    }
+                  }
                 />
-                
               </div>
             </form>
           </div>

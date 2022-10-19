@@ -4,6 +4,24 @@
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */
+.header {
+  position: fixed !important;
+  width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    /* margin-top: -130px; */
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    -webkit-box-shadow: 0 4px 15px -5px rgb(0 0 0 / 10%) !important;
+    box-shadow: 0 4px 15px -5px rgb(0 0 0 / 10%) !important;
+
+}
+
+.mb-5, .my-5 {
+  margin-bottom: 3rem!important;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
   line-height: 1.6;
@@ -29,6 +47,9 @@ body {
   body.offcanvas-menu:before {
     opacity: 1;
     visibility: visible; }
+
+ 
+ 
 
 .text-black {
   color: #000000 !important; }
@@ -250,7 +271,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       .site-nav .site-navigation .site-menu .has-children > a {
         position: relative;
         padding-right: 20px; }
-        .site-nav .site-navigation .site-menu .has-children > a:before {
+        /* .site-nav .site-navigation .site-menu .has-children > a:before {
           position: absolute;
           content: "\e313";
           font-size: 14px;
@@ -259,7 +280,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-          font-family: 'icomoon'; }
+          font-family: 'icomoon'; } */
       .site-nav .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
         opacity: 0;
