@@ -15,9 +15,9 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <>
       <nav
-        className="site-nav dark js-site-navbar mb-5 site-navbar-target"
+        className="site-nav dark js-site-navbar mb-5 site-navbar-target bg-white"
         style={{ position: "relative" }}
       >
         <div className="container">
@@ -34,14 +34,14 @@ const Header = () => {
             </a> */}
 
             <ul className="js-clone-nav d-none d-lg-inline-block site-menu float-left">
-              <li className="active" style={{ paddingLeft: "50px" }}>
+              <li className="active" style={{ paddingLeft: "100px" }}>
                 <a href="home" className="nav-link">
-                  Home
+                <a h3>Home</a>
                 </a>
               </li>
-              <li className="has-children" style={{ paddingLeft: "70px" }}>
+              <li className="has-children" style={{ paddingLeft: "100px" }}>
                 <a href="#!" className="nav-link">
-                  Info
+                  <a h3>Info</a>
                 </a>
                 <ul className="dropdown">
                   <li>
@@ -85,9 +85,9 @@ const Header = () => {
                 <a
                   href="start"
                   className="nav-link"
-                  style={{ paddingLeft: "70px" }}
+                  style={{ paddingLeft: "100px" }}
                 >
-                  Let`s Start
+                   <a h3>Let's start</a>
                 </a>
               </li>
               {/* <li>
@@ -99,20 +99,12 @@ const Header = () => {
                 <a
                   href="community"
                   className="nav-link"
-                  style={{ paddingLeft: "70px" }}
+                  style={{ paddingLeft: "100px" }}
                 >
-                  Community
+                   <a h3>Community</a>
                 </a>
               </li>
-              <li>
-                <a
-                  href="#contact-section"
-                  className="nav-link"
-                  style={{ paddingLeft: "70px" }}
-                >
-                  About
-                </a>
-              </li>
+              
             </ul>
 
             <ul className="js-clone-nav d-none mt-1 d-lg-inline-block site-menu float-right">
@@ -166,7 +158,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 

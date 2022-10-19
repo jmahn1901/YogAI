@@ -22,12 +22,12 @@ let InfoMap = () => {
   };
 
   return (
-    <>
+    <div className="color bg-light" >
       <div
         className="container"
         style={{ marginBottom: "100px", width: "center" }}
       >
-        <div className="row justify-content-center">
+        <div className="row justify-content-center ">
           <h3 style={{ paddingTop: "100px", paddingBottom: "100px" }}>
             요가정보 리스트
           </h3>
@@ -42,7 +42,7 @@ let InfoMap = () => {
           <MapContainer searchPlace={Place} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

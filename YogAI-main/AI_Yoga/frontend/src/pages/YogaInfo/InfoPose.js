@@ -19,7 +19,7 @@ let InfoPose = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <div className="color bg-light">
       <div
         className="container"
         style={{ marginBottom: "100px", width: "center" }}
@@ -89,7 +89,7 @@ let InfoPose = () => {
           </Pagination>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

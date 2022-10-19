@@ -11,8 +11,7 @@ const Footer = () => {
                     About Launch<span className="text-primary">.</span>{" "}
                   </h3>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind texts.
+                   
                   </p>
                 </div>
               </div>
@@ -23,28 +22,41 @@ const Footer = () => {
                   <h3>Follow Us</h3>
                   <ul className="list-unstyled social">
                     <li>
-                      <a href="#!">
-                        <span className="icon-instagram"></span>
+                      <a href="https://github.com/swon95">
+                        <span className="icon-instagram">
+                          <img src="https://i0.wp.com/worldyogaforum.com/wp-content/uploads/2022/04/34a.png?resize=1024%2C845&ssl=1" alt="Image" className="img-fluid" />
+                        </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-twitter"></span>
+                      <a href="https://github.com/goodsosbva">
+                        <span className="icon-twitter">
+                        <img src="https://avatars.githubusercontent.com/u/62534722?v=4" alt="Image" className="img-fluid"/>
+                        </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-facebook"></span>
+                      <a href="https://github.com/zkdk1241">
+                        <span className="icon-facebook">
+                        <img src="https://avatars.githubusercontent.com/u/47853679?v=4" alt="Image" className="img-fluid" />
+
+                        </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-linkedin"></span>
+                      <a href="https://github.com/jmahn1901">
+                        <span className="icon-linkedin">
+                        <img src="https://avatars.githubusercontent.com/u/72716200?v=4" alt="Image" className="img-fluid" />
+
+                        </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
-                        <span className="icon-pinterest"></span>
+                      <a href="https://github.com/hidihi">
+                        <span className="icon-pinterest">
+                        <img src="https://avatars.githubusercontent.com/u/90600309?v=4" alt="Image" className="img-fluid" />
+
+                        </span>
                       </a>
                     </li>
                     {/* <li>
@@ -79,7 +91,7 @@ const Footer = () => {
               <div className="col-lg-3">
                 <div className="widget">
                   <h3>Quick Contact</h3>
-                  <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+                  <address>AI 양재 허브</address>
                   <ul className="list-unstyled links mb-4">
                     <li>
                       <a href="tel://11234567890">+1(123)-456-7890</a>
