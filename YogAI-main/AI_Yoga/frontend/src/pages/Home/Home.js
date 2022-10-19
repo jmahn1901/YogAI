@@ -178,7 +178,7 @@ const Home = () => {
                 </div>
 
                 {/* model-section */}
-                /
+                
                 <div className="untree_co-section bg-light" id="model-section">
                     <div className="container">
                         <div className="row justify-content-between">
@@ -293,6 +293,8 @@ const Home = () => {
                     </div>
                     {/* <!-- /.container --> */}
                 </div>
+
+
 
             </main>
         </>
