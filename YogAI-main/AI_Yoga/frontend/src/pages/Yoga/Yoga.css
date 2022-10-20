@@ -8,7 +8,7 @@
 .secondary-btn {
     position: relative;
     top: 100px;
-    left: 45%;
+    left: 47%;
     padding: 10px 20px 10px 20px;
     /* border-radius: 5px; */
     border-radius: 2em;
@@ -28,7 +28,7 @@
 
 #stop-btn {
     position: relative;
-    top: 650px;
+    top: 700px;
 }
 
 
