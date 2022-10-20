@@ -1,6 +1,6 @@
-.site-nav {
+/* .site-nav {
     background-color:white;
-    transition: all 0.35s ease;
+    transition: all 2s ease;
 }
 
 .site-nav.navbar-fixed-top {
@@ -9,5 +9,27 @@
     left:0;
     right:0;
     padding: 20px;
-    transition: all 5s ease;
-}
+    transition: all 2s ease;
+} */
+
+  .site-nav {
+    background-color: rgba(0, 0, 0, 0) !important;
+    transition-property: rgba(0, 0, 0, 0) !important;
+    transition-duration: 1s;
+    /* transition-function: ease-in-out; */
+    transition-timing-function: ease-in-out;
+  }
+  
+  .site-nav-dark {
+    background-color: rgba(255, 255, 255, 1) !important;
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    /* box-shadow:0px 0px 20px 0px;
+    -webkit-box-shadow: 0 4px 15px -5px rgb(0 0 0 / 10%); */
+    /* box-shadow: 0 4px 15px -5px rgb(0 0 0 / 10%); */
+    position: fixed;
+    color: #ffffff !important;
+  }
+  
+  .site-nav-collapse, .site-nav-nav, .site-nav-item {
+    color: inherit !important;
+  }
