@@ -2,26 +2,30 @@ const Footer = () => {
     return (
       <>
         <div className="site-footer bg-white" style={{display: "flex", flexWrap: "wrap"}}>
-          <div className="footer-dots"></div>
           <div className="container">
-            <div className="row">
+            <div className="row" style={{position: "relative", top: "30px"}}>
               <div className="col-lg-4">
                 <div className="widget">
                   <h3>
-                    About Launch<span className="text-primary">.</span>{" "}
+                    AI양재허브 2기<span className="text-primary"></span>{" "}
                   </h3>
                   <p>
                   <a href="https://ai-yangjae.kr/com/com01.asp?scrID=0000000158&amp;pageNum=5&amp;subNum=1&amp;ssubNum=1" target="_blank">
-                      <img style={{}} src="https://media.discordapp.net/attachments/1022832747598843984/1031071527325667338/2.png" />
+                      <img src="https://media.discordapp.net/attachments/1022832747598843984/1031071527325667338/2.png" style={{
+    width: "200px",
+    position: "relative",
+    top: "-2vh"
+   
+}}/>
                           </a>
                   </p>
                 </div>
               </div>
   
-              <div className="col-lg-2 ml-auto" style={{marginRight: "10vw"}}>
+              <div className="col-lg-2 ml-auto" style={{marginRight: "14vw"}}>
                 <div className="widget">
                   {/* 깃허브 주소용 아이콘 코드 */}
-                  <h3>Follow Us</h3>
+                  <h3>SNS</h3>
                   <ul className="list-unstyled social" style={{display: "flex", gap: "20px", borderRadius: "30px"}}>
                     <li>
                       <a href="https://github.com/swon95" target='_blank'>
@@ -79,18 +83,25 @@ const Footer = () => {
   
               <div className="col-lg-3">
                 <div className="widget">
-                  <h3>Quick Contact</h3>
-                  <address>AI 양재 허브</address>
+                  <h3>연락방법</h3>
+                  {/* <address>AI 양재 허브</address> */}
                   <ul className="list-unstyled links mb-4">
                     <li>
-                      <a href="tel://11234567890">+1(123)-456-7890</a>
+                      <a href="tel://11234567890">권현성) goodsosbva@naver.com</a>
                     </li>
                     <li>
-                      <a href="tel://11234567890">+1(123)-456-7890</a>
+                      <a href="tel://11234567890">안정미) mkhunter37@gmail.com</a>
                     </li>
                     <li>
-                      <a href="mailto:info@mydomain.com">info@mydomain.com</a>
+                      <a href="mailto:info@mydomain.com">허다혜) hdh553322@gmail.com</a>
                     </li>
+                     <li>
+                      <a href="mailto:info@mydomain.com">양서진) yseojin1010@naver.com</a>
+                    </li>
+                     <li>
+                      <a href="mailto:info@mydomain.com">심상원) hdh553322@gmail.com</a>
+                    </li>
+                    
                   </ul>
                 </div>
               </div>

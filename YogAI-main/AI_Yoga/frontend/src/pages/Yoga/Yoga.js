@@ -227,7 +227,7 @@ function Yoga() {
                                     (!isgoodPose) ? (<span className="pose-comment">포즈를 제대로 취해보세요!</span>) : (
                                         <span className="pose-comment">매우 잘 하고 있어요!</span>
                                     )
-                                }
+              }
               </h8>
 
             </div>

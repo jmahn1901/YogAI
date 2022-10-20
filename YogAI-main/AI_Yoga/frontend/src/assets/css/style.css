@@ -217,7 +217,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .site-nav .site-navigation .site-menu {
     margin-bottom: 0; }
     .site-nav .site-navigation .site-menu > li {
-      display: inline-block; }
+      display: inline-block; }k
       .site-nav .site-navigation .site-menu > li > a {
         font-weight: 500;
         font-size: 14px;
@@ -234,14 +234,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #000000;
         border-radius: 30px; }
+        /* 변경 부분 */
+        .site-nav .site-navigation .site-menu > li.cta-button-outline .logout:hover {
+          color: #ff0000;
+          background: #ffffff;
+          border-color: #ff0000; }
         .site-nav .site-navigation .site-menu > li.cta-button-outline a:hover {
           color: #000000;
           background: #ffffff;
+          /* background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple);; */
+          /* linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple); */
           border-color: #000000; }
+        
       .site-nav .site-navigation .site-menu > li.cta-button-outline.active a {
         color: #000000;
         background: #ffffff;
         border-color: #ffffff; }
+      
       .site-nav .site-navigation .site-menu > li.cta-primary a {
         padding: 5px 22px;
         border: 1px solid transparent;
@@ -1391,7 +1400,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   background: #fafafa;
   font-size: 14px;
   color: #888;
-  padding: 70px 0; }
+  padding: 10px 0; }
   .site-footer a {
     color: #107BE9;
     position: relative;

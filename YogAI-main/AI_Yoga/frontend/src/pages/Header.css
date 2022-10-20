@@ -33,3 +33,15 @@
   .site-nav-collapse, .site-nav-nav, .site-nav-item {
     color: inherit !important;
   }
+
+  .site-nav .site-navigation .site-menu > li > .nav-link > a:hover {
+    border-bottom: 2px solid black;
+  }
+
+  .cta-primary > a:hover {
+    background-color: #000000 !important;
+  }
+
+  /* .site-nav .site-navigation .site-menu > li.cta-button-outline1 a:hover {
+    border-color: crimson !important;
+  } */
