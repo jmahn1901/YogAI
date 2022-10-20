@@ -10,7 +10,7 @@ let Detail = ({ modalData }) => {
                     <div className="modal-body">
                         {
                             modalData.url === "" ? (<></>) : (
-                                <img alt="게시글 이미지" src={modalData.url} />
+                                <img style={{width:'100%'}} alt="게시글 이미지" src={modalData.url} />
                             )
                         }
                         <h5>제목</h5>
