@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <>
-        <div className="site-footer" style={{display: "flex", flexWrap: "wrap"}}>
+        <div className="site-footer bg-white" style={{display: "flex", flexWrap: "wrap"}}>
           <div className="footer-dots"></div>
           <div className="container">
             <div className="row">
@@ -11,7 +11,9 @@ const Footer = () => {
                     About Launch<span className="text-primary">.</span>{" "}
                   </h3>
                   <p>
-                   
+                  <a href="https://ai-yangjae.kr/com/com01.asp?scrID=0000000158&amp;pageNum=5&amp;subNum=1&amp;ssubNum=1" target="_blank">
+                      <img style={{}} src="https://media.discordapp.net/attachments/1022832747598843984/1031071527325667338/2.png" />
+                          </a>
                   </p>
                 </div>
               </div>
