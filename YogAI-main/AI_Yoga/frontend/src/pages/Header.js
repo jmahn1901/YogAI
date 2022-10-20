@@ -131,7 +131,7 @@ const Header = () => {
                     className="cta-button-outline"
                     style={{ marginRight: "10px" }}
                   >
-                    <a href="login">Log In</a>
+                    <a href="login">로그인</a>
                   </li>
                 ) : (
                   <li
@@ -139,7 +139,7 @@ const Header = () => {
                     style={{ marginRight: "10px" }}
                   >
                     <a
-                      className="cta-button-outline"
+                      className="logout"
                       style={{
                         paddingTop: "9px",
                         paddingBottom: "8px",
@@ -148,7 +148,7 @@ const Header = () => {
                       }}
                       onClick={logOutBtn}
                     >
-                      Log Out
+                      로그아웃
                     </a>
                   </li>
                 )
@@ -156,7 +156,7 @@ const Header = () => {
 
               {cookies.cookie === undefined ? (
                 <li className="cta-primary">
-                  <a href="register">Sign In</a>
+                  <a href="register">회원 가입</a>
                 </li>
               ) : (
                 <></>
