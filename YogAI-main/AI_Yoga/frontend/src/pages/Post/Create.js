@@ -64,7 +64,7 @@ console.log(modalData)
                             <div className="mb-3" style={{ textAlign: "center" }}>
                                 {
                                     modalData.url === "" ? (<></>) : (
-                                        <img alt="일기장 사진" src={modalData.url} style={{ borderRadius: "20px", width: "50%" }} />
+                                        <img alt="게시글 사진" src={modalData.url} style={{ borderRadius: "20px", width: "50%" }} />
                                     )
                                 }
                             </div>
@@ -97,7 +97,7 @@ console.log(modalData)
                                         }).catch(err => {
                                             console.log(err);
                                         })
-                                    }}>일기장 생성</button>
+                                    }}>게시글 생성</button>
                             ) : (
                                 <button type="button" className="btn btn-warning"
                                     onClick={() => {
@@ -110,7 +110,7 @@ console.log(modalData)
                                         }).catch(err => {
                                             console.log(err);
                                         })
-                                    }}>일기장 수정</button>
+                                    }}>게시글 수정</button>
                             )
                         }
                     </div>

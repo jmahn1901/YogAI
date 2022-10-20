@@ -28,7 +28,7 @@ let List = () => {
         // 리스트 페이지로 들어 올 경우, 로그인 되어있는 사용자인지 확인하는 부분.
         if (cookies.cookie === undefined) {
             alert("로그인이 필요합니다.");
-            // navigate("/");
+            navigate("/"); // 페이지 '/' 경로로 이동
             return;
         }
 
@@ -77,7 +77,7 @@ let List = () => {
         });
     }
 
-    //일기장 리스트를 가져오는 서버 요청 함수
+    //게시글 리스트를 가져오는 서버 요청 함수
     let getListDaily = async () => {
         return await axios.get(server.url + '/community', {
             headers: {
@@ -86,7 +86,7 @@ let List = () => {
         });
     }
 
-    //일기장을 삭제하는 서버 요청 함수
+    //게시글을 삭제하는 서버 요청 함수
     let deleteDaily = async (shortId, title) => {
         if (window.confirm(`${title}를 삭제하시겠습니까?`)) {
             return await //http://localhost:8080/community/shortId/delete
@@ -102,7 +102,7 @@ let List = () => {
         console.log(data);
         setModalData({
             ...modalData,
-            kind: "일기장 상세보기",
+            kind: "게시글 상세보기",
             shortId: data.shortId,
             title: data.title,
             content: data.content,
@@ -119,7 +119,7 @@ let List = () => {
             }
         }).then(res => {
             console.log(res);
-            setDailise(res.data.daily); //일기장 가져온거 넣기
+            setDailise(res.data.daily); //게시글 가져온거 넣기
             setPage({
                 page: page,
                 totalPage: res.data.totalPage
@@ -136,7 +136,7 @@ let List = () => {
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
                         <h1 className="fw-light">Daily List</h1>
-                        <p className="lead text-muted">나만의 일기장을 작성하세요.</p>
+                        <p className="lead text-muted">나만의 게시글을 작성하세요.</p>
                         <div>
                             <button className="btn btn-primary"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => {
@@ -150,7 +150,7 @@ let List = () => {
                                         email: cookies.cookie.email
                                     })
                                 }}
-                            >일기장 생성</button>
+                            >게시글 생성</button>
                         </div>
                     </div>
                 </div>
@@ -162,77 +162,89 @@ let List = () => {
                 {/* 게시글 영역 */}
                 <div className="container">
 
-                    {/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> */}
-                    <ul class="table">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {/* <ul class="table"> */}
                         {
-                            // 가져온 일기장 리스트를 보여주는 코드
+                            // 가져온 게시글 리스트를 보여주는 코드
                             dailise.map(data => (
 
-                                <li>
-                                    <div className="col" key={data.shortId}>
-                                        <div className="card shadow-sm">
-                                            {
-                                                // 이미지가 존재하지 않을경우 안보여줌
-                                                data.url === "" ? (<></>) : (
-                                                    <img className="card-img-top" alt="일기장 사진" src={data.url} />
-                                                )
-                                            }
-                                            <div className="card-body">
-                                                <h5 className="card-title"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#dailyModal"
-                                                    onClick={() => { detailDaily(data) }}>{data.title}</h5>
-                                                <p className="card-text">{data.content.substring(0, ((data.content).length / 2))}...&nbsp;&nbsp;
-                                                    <a href="#" onClick={() => { detailDaily(data) }}
+                                // <li>
+                                <div className="col" key={data.shortId}>
+                                    <div className="card shadow-sm">
+                                        {
+                                            // 이미지가 존재하지 않을경우 안보여줌
+                                            data.url === "" ? (<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATQAAACjCAMAAAAzSxLiAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDTAMS/AAE4hXR0AAAAAElFTkSuQmCC" />) : (
+                                                <img className="card-img-top" style={{ width: '100%' }} alt="게시글 사진" src={data.url} />
+                                            )
+                                        }
+                                        <div className="card-body">
+                                            <h5 className="card-title"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#dailyModal"
+                                                onClick={() => { detailDaily(data) }}>{data.title}</h5>
+                                            <p className="card-text">{data.content.substring(0, ((data.content).length / 2))} &nbsp;&nbsp;
+                                            </p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <div className="btn-group">
+                                                    <button type="button"
+                                                        style={{  margin: '0', 
+                                                        paddingTop:'0px', 
+                                                        paddingBottom:'0px',
+                                                        paddingLeft:'15px',
+                                                        paddingRight:'15px',
+                                                        borderRadius:'10px'}}
+                                                        class="btn btn-outline-warning"
                                                         data-bs-toggle="modal"
-                                                        data-bs-target="#dailyModal">상세보기</a></p>
-                                                <div className="d-flex justify-content-between align-items-center">
-                                                    <div className="btn-group">
-                                                        <button type="button"
-                                                            className="btn btn-sm btn-outline-secondary"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModal"
-                                                            onClick={() => {
-                                                                // 일기장 수정 버튼을 눌렀을 경우,
-                                                                // 수정을 원하는 일기장의 정보를 저장함
-                                                                setModalData({
-                                                                    kind: "게시글 수정",
-                                                                    shortId: data.shortId,
-                                                                    title: data.title,
-                                                                    content: data.content,
-                                                                    url: data.url,
-                                                                    email: data.author.email
-                                                                });
-                                                            }}
-                                                        >수정</button>
-                                                        <button type="button"
-                                                            className="btn btn-sm btn-outline-secondary"
-                                                            onClick={() => {
-                                                                //삭제를 시키는 실질적인 코드
-                                                                // 인자로 받는 shortId 와 title == 제목
-                                                                deleteDaily(data.shortId, data.title).then(res => {
-                                                                    if (res.data.status) {
-                                                                        alert(res.data.message);
-                                                                        window.location.reload();
-                                                                    }
-                                                                }).catch(err => {
-                                                                    console.log(err);
-                                                                })
-                                                            }}
-                                                        >삭제</button>
-                                                    </div>
-                                                    {/* npm i npm i moment */}
-                                                    <small className="text-muted">작성자 : {data.author.name} | {moment(data.updatedAt).format("YYYY-MM-DD HH:mm:ss")}</small>
+                                                        data-bs-target="#exampleModal"
+                                                        onClick={() => {
+                                                            // 게시글 수정 버튼을 눌렀을 경우,
+                                                            // 수정을 원하는 게시글의 정보를 저장함
+                                                            setModalData({
+                                                                kind: "게시글 수정",
+                                                                shortId: data.shortId,
+                                                                title: data.title,
+                                                                content: data.content,
+                                                                url: data.url,
+                                                                email: data.author.email
+                                                            });
+                                                        }}
+                                                    >수정</button><span>&nbsp;</span>
+                                                    <button type="button"
+                                                        style={{ margin: '0', 
+                                                        paddingTop:'0px', 
+                                                        paddingBottom:'0px',
+                                                        paddingLeft:'15px',
+                                                        paddingRight:'15px',
+                                                        borderRadius:'10px'}}
+                                                        class="btn btn-outline-danger"
+                                                        onClick={() => {
+                                                            //삭제를 시키는 실질적인 코드
+                                                            // 인자로 받는 shortId 와 title == 제목
+                                                            deleteDaily(data.shortId, data.title).then(res => {
+                                                                if (res.data.status) {
+                                                                    alert(res.data.message);
+                                                                    window.location.reload();
+                                                                }
+                                                            }).catch(err => {
+                                                                console.log(err);
+                                                            })
+                                                        }}
+                                                    >삭제</button>
                                                 </div>
+                                                <small className="text-muted">{data.author.name}
+                                                    {moment(data.updatedAt).format("YYYY-MM-DD HH:mm:ss")}</small>
                                             </div>
+                                            {/* npm i npm i moment */}
+
                                         </div>
                                     </div>
-                                </li>
+                                </div>
+                                // </li>
                             ))
                         }
                         {/* </li> */}
-                    </ul>
-                    {/* </div> */}
+                        {/* </ul> */}
+                    </div>
                 </div>
 
                 {/* 페이징 처리하는 부분 */}
