@@ -207,8 +207,8 @@ const Home = () => {
                                         setDesimg(imgpose)
                                         }}>
                                         <h3>Fast, Precise Model</h3>
-                                        <p>17개의 keypoint를 감지하여 정확한 요가 포즈를 확인</p>
-                                        <p>초당 30개의 Frame에 대해 Detection을 보장(30FPS)</p>
+                                        <p>17개의 keypoint기반 정확한 요가 포즈를 확인</p>
+                                        <p>초당 30개의 Frame에 대해 Detection(30FPS)</p>
                                     </div>
                                 </a>
                                 {/* <!-- /.service --> */}

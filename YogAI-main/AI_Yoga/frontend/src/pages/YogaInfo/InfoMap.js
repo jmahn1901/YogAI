@@ -39,7 +39,7 @@ let InfoMap = () => {
             요가 학원 찾기
 
           </h3>
-          <div style={{ background : "#fafafa", boxShadow : "20px 20px 0 0 #107be9", overflow : "hidden", borderRadius: "20px"}}>
+          <div>
             <form
               className="inputForm"
               onSubmit={handleSubmit}
