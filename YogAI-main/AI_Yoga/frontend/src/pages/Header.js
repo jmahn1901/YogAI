@@ -19,26 +19,13 @@ const Header = () => {
 
   // var nav = $('.content-nav');
   useEffect(() => {
-    $(window).scroll(function () {
-      var windowpos = $(window).scrollTop();
-      var navbar = $(".site-nav");
+    let lastScrollPosition = 0;
+    const navbar = document.querySelector(".site-nav");
+    window.addEventListener("scroll", function (e) {
+      lastScrollPosition = window.scrollY;
 
-      console.log(navbar);
-
-      // if win >= navbar and not already a sticky
-      if (
-        windowpos >= navbar.position().top &&
-        !navbar.hasClass("navbar-fixed-top")
-      ) {
-        navbar.addClass("navbar-fixed-top");
-
-        // if win <= navbar and is a sticky
-      } else if (
-        windowpos <= navbar.position().top &&
-        navbar.hasClass("navbar-fixed-top")
-      ) {
-        navbar.removeClass("navbar-fixed-top");
-      }
+      if (lastScrollPosition > 100) navbar.classList.add("site-nav-dark");
+      else navbar.classList.remove("site-nav-dark");
     });
   });
 
@@ -47,7 +34,6 @@ const Header = () => {
       <nav
         className="site-nav dark js-site-navbar mb-5 site-navbar-target"
         // style={{ position: "fixed", background: "white" }}
-
       >
         <div className="container">
           <div className="site-navigation">
@@ -67,7 +53,7 @@ const Header = () => {
             <ul className="js-clone-nav d-none d-lg-inline-block site-menu float-left">
               <li className="active" style={{ paddingLeft: "100px" }}>
                 <a href="home" className="nav-link">
-                <a h3>Home</a>
+                  <a h3>Home</a>
                 </a>
               </li>
               <li className="has-children" style={{ paddingLeft: "100px" }}>
@@ -118,7 +104,7 @@ const Header = () => {
                   className="nav-link"
                   style={{ paddingLeft: "100px" }}
                 >
-                   <a h3>Let's start</a>
+                  <a h3>Let's start</a>
                 </a>
               </li>
               {/* <li>
@@ -132,10 +118,9 @@ const Header = () => {
                   className="nav-link"
                   style={{ paddingLeft: "100px" }}
                 >
-                   <a h3>Community</a>
+                  <a h3>Community</a>
                 </a>
               </li>
-              
             </ul>
 
             <ul className="js-clone-nav d-none mt-1 d-lg-inline-block site-menu float-right">
