@@ -1,0 +1,13 @@
+.site-nav {
+    background-color:white;
+    transition: all 0.35s ease;
+}
+
+.site-nav.navbar-fixed-top {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding: 20px;
+    transition: all 5s ease;
+}

@@ -20,6 +20,7 @@ router.post("/register", async (req, res, next) => {
     if (chkEmail) {
         res.json({
             status: false,
+            stateEmail: false,
             message: "이미 존재 하는 이메일이네용!"
         })
         return;
@@ -37,6 +38,7 @@ router.post("/register", async (req, res, next) => {
     if (!emailValueCheck) {
         res.json({
             status: false,
+            stateEmail: false,
             message: "이메일 형식이 잘못되었네용!!"
         })
         return;
@@ -44,6 +46,7 @@ router.post("/register", async (req, res, next) => {
     else if (!passwordValueCheck) {
         res.json({
             status: false,
+            statePassword: false,
             message: "비번 형식이 잘못되었네용!!"
         })
         return;
@@ -51,6 +54,7 @@ router.post("/register", async (req, res, next) => {
     else if (nickname === undefined || nickname.length === 0) {
         res.json({
             status: false,
+            stateNickname: false,
             message: "닉네임을 입력해주세용!!"
         })
     }

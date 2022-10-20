@@ -22,27 +22,27 @@ const Footer = () => {
                   <h3>Follow Us</h3>
                   <ul className="list-unstyled social" style={{display: "flex", gap: "20px", borderRadius: "30px"}}>
                     <li>
-                      <a href="https://github.com/swon95%22%3E">
+                      <a href="https://github.com/swon95" target='_blank'>
                         <img style={{height: "50px"}} src= "https://avatars.githubusercontent.com/u/96659041?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/goodsosbva%22%3E">
+                      <a href="https://github.com/goodsosbva" target='_blank'>
                       <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/62534722?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/zkdk1241%22%3E">
+                      <a href="https://github.com/zkdk1241" target='_blank'>
                       <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/47853679?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/jmahn1901%22%3E">
+                      <a href="https://github.com/jmahn1901" target='_blank'>
                       <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/72716200?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/hidihi%22%3E">
+                      <a href="https://github.com/hidihi" target='_blank'>
                       <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/90600309?v=4%22%3E" />
                       </a>
                     </li>

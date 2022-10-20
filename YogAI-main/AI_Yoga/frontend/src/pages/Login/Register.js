@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const server = {
   "url": "http://localhost:8080"
 }
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [registerData, setRegisterData] = useState({
     email: "",
     nickname: "",
@@ -29,7 +32,7 @@ const Register = () => {
   
   }
 
-  const registerFunction = () => {
+  const registerFunction = async () => {
     const emailRegex =
       /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     
@@ -44,28 +47,74 @@ const Register = () => {
     
     if (!emailValueCheck) {
       alert("이메일 제대로 입력 좀...")
-      return
+      setRegisterData({
+        email: "",
+        password: document.getElementById("password").value,
+        repassword: document.getElementById("rePassword").value,
+        nickname: document.getElementById("nickName").value
+      })
+
+      //email input에 포커스
+      document.getElementById("email").focus();
+      //에러 메시지를 보여주고
+      setErrorMsg("이메일 제대로 입력 좀...");
+      return;
     }
     else if (registerData.nickname === undefined || registerData.nickname.length === 0) {
       alert("닉네임 한글자라도 좀...")
+      return
     }
     else if (!passwordValueCheck1) {
       console.log(passwordValueCheck1)
       alert("pwd 제대로 입력 좀...")
+
+      setRegisterData({
+        email: document.getElementById("email").value,
+        password: "",
+        repassword: "",
+        nickname: document.getElementById("nickName").value
+      })
+
+      // password input에 포커스
+      document.getElementById("password").focus();
+      // 에러 메시지를 보여주고
+      setErrorMsg("pwd 제대로 입력 좀...");
       return
     }
     else if (!passwordValueCheck2) {
       alert("2차 pwd 제대로 입력 좀...")
+      setRegisterData({
+        email: document.getElementById("email").value,
+        password: "",
+        repassword: "",
+        nickname: document.getElementById("nickName").value
+      })
+
+      // 2차 password input에 포커스
+      document.getElementById("password").focus();
+      // 에러 메시지를 보여주고
+      setErrorMsg("2차 pwd 제대로 입력 좀...");
       return
     }
     else if (registerData.password !== registerData.repassword) {
       alert("1차 비번이랑 2차 비번이랑 달라용 호호홍~")
+      setRegisterData({
+        email: document.getElementById("email").value,
+        password: "",
+        repassword: "",
+        nickname: document.getElementById("nickName").value
+      })
+
+      // 2차 password input에 포커스
+      document.getElementById("password").focus();
+      // 에러 메시지를 보여주고
+      setErrorMsg("1차랑 2차 pwd 같게 입력 좀...");
       return
     }
 
     console.log(registerData);
     // axios.get(url,[,config])	
-    return axios.post(server.url + '/user/register', registerData)
+    return await axios.post(server.url + '/user/register', registerData)
   }
  
   return (
@@ -101,7 +150,7 @@ const Register = () => {
               <div className="mb-3">
                     <p className="text-dark">{errorMsg}</p>
               </div>
-              <div class="form-field">
+              <div class="form-field" style={{marginRight: "30px"}}>
                 <input
                   type="button"
                   class="btn btn-primary btn-block"
@@ -111,20 +160,58 @@ const Register = () => {
                       console.log(res);
                       if (res.data.status) {
                         alert(res.data.message);
+                        navigate('/');
                         // window.location.reload();
                       }
-                      else { 
-                      //에러 메시지를 보여주고
-                      setErrorMsg(res.data.message);
-                      //input의 모든 데이터를 없앰
-                      setRegisterData({
-                        email: "",
-                        password: "",
-                        repassword: "",
-                        nickname: ""
-                      })
-                      //email input에 포커스
-                      document.getElementById("email").focus();
+                      else {
+                        // 1. 이메일이 잘못된 경우
+                        if (!res.data.stateEmail) {
+                          setRegisterData({
+                            email: "",
+                            password: document.getElementById("password").value,
+                            repassword: document.getElementById("rePassword").value,
+                            nickname: document.getElementById("nickName").value
+                          })
+
+                          //email input에 포커스
+                          document.getElementById("email").focus();
+                          //에러 메시지를 보여주고
+                          setErrorMsg(res.data.message);
+                          return;
+                        }
+
+                        // 2. 비번이 잘못된 경우
+                        else if (!res.data.statePassword) {
+                          setRegisterData({
+                            email: document.getElementById("email").value,
+                            password: "",
+                            repassword: "",
+                            nickname: document.getElementById("nickName").value
+                          })
+
+                          // password input에 포커스
+                          document.getElementById("password").focus();
+                          // 에러 메시지를 보여주고
+                          setErrorMsg(res.data.message);
+                          return;
+                        }
+                        
+                          
+                          // 3. 닉네임이 잘못된 경우
+                        else if (!res.data.stateNickname) {
+                          setRegisterData({
+                            email: document.getElementById("email").value,
+                            password: document.getElementById("password").value,
+                            repassword: document.getElementById("rePassword").value,
+                            nickname: ""
+                          })
+
+                          // password input에 포커스
+                          document.getElementById("nickName").focus();
+                          // 에러 메시지를 보여주고
+                          setErrorMsg(res.data.message);
+                          return;
+                        }
                     }
                     }).catch(e => {
                       console.log(e)

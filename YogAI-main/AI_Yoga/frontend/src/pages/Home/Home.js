@@ -21,7 +21,7 @@ const Home = () => {
         <>
             <main>
                 {/* home */}
-                <div className="untree_co-hero pb-0 bg-light" id="home-section" >
+                <div className="untree_co-hero pb-0 bg-light" id="home-section" style={{height:"100vh"}}>
                     <div className="container">
                         <div className="row">
 
@@ -41,8 +41,7 @@ const Home = () => {
 									amet nullam sed etiam veroeros.</p>
 								</div> */}
                                     <div className="col-lg-4">
-                                        <div className="intro">
-
+                                        <div className="intro" style={{ position: "relative", top: "-150px"}}>
                                             <div className="excerpt aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                                                 <span className="caption">Welcome to Yog-A!</span>
                                                 <h1 className="font-weight-bold">Explore The Platform</h1>
@@ -57,7 +56,7 @@ const Home = () => {
                                     </div>
                                     <div className="col-lg-8">
                                         <div className="illustration">
-                                            <a href="#" className="image main"> <img src="https://i0.wp.com/worldyogaforum.com/wp-content/uploads/2022/04/34a.png?resize=1024%2C845&ssl=1" alt="" /></a>
+                                            <a href="#" className="image main"> <img src="https://i0.wp.com/worldyogaforum.com/wp-content/uploads/2022/04/34a.png?resize=1024%2C845&ssl=1" alt="Image" className="img-fluid" style={{top: "-150px", position: "relative"}}/></a>
                                             {/* <img src="https://i0.wp.com/worldyogaforum.com/wp-content/uploads/2022/04/34a.png?resize=1024%2C845&ssl=1" alt="Image" className="img-fluid" /> */}
                                         </div>
                                     </div>
@@ -190,36 +189,8 @@ const Home = () => {
                 </div>
 
                 {/* model-section */}
-                <div className="untree_co-section" id="model-section">
-                    <div className="container">
-                        <div className="row justify-content-between">
-                            <div className="col-lg-4">
-                                <span className="caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">Digital Services</span>
-                                <h3 className="heading mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">A complete solution for your business website.</h3>
-                                <div className="mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                                    <ul className="list-unstyled ul-check primary">
-                                        <li>There live the blind texts</li>
-                                        <li>Far far away behind the word</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-7 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-                                <a href="https://vimeo.com/342333493" className="btn-video" data-fancybox="">
-
-                                    <span className="wrap-icon-play">
-                                        <svg className="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
-                                        </svg>
-                                    </span>
-                                    <img src="https://untree.co/demos/landing/images/dashboard.jpg" alt="Image" className="img-fluid img-shadow" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="untree_co-section bg-light">
+                
+                <div className="untree_co-section bg-light" id="model-section">
                     <div className="container">
                         <div className="row justify-content-between">
 
@@ -236,8 +207,8 @@ const Home = () => {
                                         setDesimg(imgpose)
                                         }}>
                                         <h3>Fast, Precise Model</h3>
-                                        <p>17개의 keypoint를 감지하여 정확한 요가 포즈를 확인</p>
-                                        <p>초당 30개의 Frame에 대해 Detection을 보장(30FPS)</p>
+                                        <p>17개의 keypoint기반 정확한 요가 포즈를 확인</p>
+                                        <p>초당 30개의 Frame에 대해 Detection(30FPS)</p>
                                     </div>
                                 </a>
                                 {/* <!-- /.service --> */}

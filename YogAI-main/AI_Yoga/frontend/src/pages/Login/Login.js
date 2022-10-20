@@ -34,21 +34,14 @@ const Login = () => {
     });
   };
 
-  const loginFunction = () => {
-    const emailRegex =
-      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&#]{8,}$/;
-
-    const emailValueCheck = emailRegex.test(loginData.email);
-    const passwordValueCheck1 = passwordRegex.test(loginData.password);
-
-    if (!emailValueCheck) {
+  const loginFunction = async () => {
+    
+    if (loginData.email.length === 0) {
       alert("이메일 제대로 입력 좀...");
       return;
-    } else if (!passwordValueCheck1) {
-      console.log(passwordValueCheck1);
+
+    } else if (loginData.password.length === 0) {
+      console.log(loginData);
       alert("pwd 제대로 입력 좀...");
       return;
     }
@@ -62,7 +55,7 @@ const Login = () => {
     //   alert("비번이나 아이디가 틀렷네영..!!ㅋㅋ");
     // }
 
-    return axios.post(server.url + '/user/login', loginData)
+    return await axios.post(server.url + '/user/login', loginData)
   };
 
   return (
@@ -109,7 +102,10 @@ const Login = () => {
                     name="password"
                   />
                 </div>
-                <div className="form-field">
+                <div className="mb-3">
+                    <p className="text-danger">{errorMsg}</p>
+                </div>
+                <div className="form-field" style={{marginRight: "30px"}}>
                   <input
                     type="button"
                     className="btn btn-primary btn-block"
@@ -121,6 +117,14 @@ const Login = () => {
                         if (res.data.status) {
                           setCookie("cookie", res.data, { path: "/" })
                           navigate('/');
+                          return;
+                        }
+                        else {
+                          setLoginData({
+                            email: document.getElementById("email").value,
+                            password: ""
+                          })
+                          setErrorMsg(res.data.message);
                         }
 
                       }).catch(err => {
