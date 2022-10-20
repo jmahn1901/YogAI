@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { poseImages } from '../../utils/pose_images'
 
 import './DropDown.css'
 
 export default function DropDown({ poseList, currentPose, setCurrentPose }) {
+    const [btnStatus,setBtnStatus] = useState(false)
 return (
         <div
         className='dropdown dropdown-container'
          
       >
         <button 
-            className="btn btn-secondary dropdown-toggle"
+            className="btn btn-secondary" style={{width:"35%"}}
             type='button'
-            data-bs-toggle="dropdown"
-            id="pose-dropdown-btn"
-            aria-expanded="false"
+            onClick={()=>{setBtnStatus(!btnStatus)}}
         >{currentPose}
         </button>
-        <ul class="dropdown-menu dropdown-custom-menu" aria-labelledby="dropdownMenuButton1">
+        {
+            btnStatus === true ? ( <ul class="dropdown-menu dropdown-custom-menu" style={{display:"block",left:"auto"}} aria-labelledby="dropdownMenuButton1">
             {poseList.map((pose) => (
                 
                 <li onClick={() => setCurrentPose(pose)}>
@@ -33,7 +33,9 @@ return (
                 </li>
             )) }
             
-        </ul>
+        </ul>) : (<></>)
+        }
+       
               
           
       </div>

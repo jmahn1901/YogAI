@@ -3,6 +3,8 @@
     background: white; 
     min-width: 100vw;
     min-height: 100vh;
+    position: relative;
+    top:  200px;
 }
 
 .secondary-btn {
@@ -26,10 +28,10 @@
     background-color: rgba(0, 0, 0,0.4);
 }
 
-#stop-btn {
+/* #stop-btn {
     position: relative;
     top: 650px;
-}
+} */
 
 
 .starting-contdown {
