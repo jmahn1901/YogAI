@@ -12,7 +12,7 @@ return (
          
       >
         <button 
-            className="btn btn-secondary" style={{width:"35%"}}
+            className="btn btn-secondary" style={{width:"25%", fontSize: "20px"}}
             type='button'
             onClick={()=>{setBtnStatus(!btnStatus)}}
         >{currentPose}
