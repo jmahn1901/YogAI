@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 import Yoga from './pages/Yoga/Yoga';
@@ -24,13 +24,13 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='home' element={<Home />} />
-        <Route path='infopose' element={<InfoPose />} />
-        <Route path='infomap' element={<InfoMap />} />
+        <Route path='/' element={<Home />}/>
+        <Route path='home' element={<Home />}/>
+        <Route path='infopose' element={<InfoPose/>}/>
+        <Route path='infomap' element={<InfoMap/>}/>
         <Route path='start' element={<Yoga />} />
         <Route path='/about' element={<About />} />
-
+        
         <Route path="login" element={<Login />} />
         <Route path="Register" element={<Register />} />
 
@@ -41,14 +41,4 @@ export default function App() {
   )
 }
 
-
-
-
-
-{/* <div className="owl-stage-outer owl-height" style={{height : "10px"}}/> */ }
-
-// <div className="owl-stage" style="transform: translate3d(-1340px, 0px, 0px); transition: all 0s ease 0s; width: 4690px;">
-
-// style="transform: translate3d(-1340px, 0px, 0px); transition: all 0s ease 0s; width: 4690px;"
-// style={{trnasform: "translate3d(-1340px, 0px, 0px)", width: "4690px"}}
 

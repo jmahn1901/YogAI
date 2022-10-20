@@ -17,31 +17,6 @@ const Header = () => {
     navigate("/");
   };
 
-  // var nav = $('.content-nav');
-  useEffect(() => {
-    $(window).scroll(function () {
-      var windowpos = $(window).scrollTop();
-      var navbar = $(".site-nav");
-
-      console.log(navbar);
-
-      // if win >= navbar and not already a sticky
-      if (
-        windowpos >= navbar.position().top &&
-        !navbar.hasClass("navbar-fixed-top")
-      ) {
-        navbar.addClass("navbar-fixed-top");
-
-        // if win <= navbar and is a sticky
-      } else if (
-        windowpos <= navbar.position().top &&
-        navbar.hasClass("navbar-fixed-top")
-      ) {
-        navbar.removeClass("navbar-fixed-top");
-      }
-    });
-  });
-
   return (
     <>
       <nav
@@ -67,7 +42,7 @@ const Header = () => {
             <ul className="js-clone-nav d-none d-lg-inline-block site-menu float-left">
               <li className="active" style={{ paddingLeft: "100px" }}>
                 <a href="home" className="nav-link">
-                <a h3>Home</a>
+                <p h3>Home</p>
                 </a>
               </li>
               <li className="has-children" style={{ paddingLeft: "100px" }}>
