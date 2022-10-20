@@ -18,6 +18,7 @@ const yoga_url = "http://www.selfyoga.co.kr/";
 
 // 요가정보 페이지
 let InfoPose = () => {
+
   //페이징 처리를 위한곳
   const [page, setPage] = useState({
     page: 1,
@@ -32,6 +33,7 @@ let InfoPose = () => {
   };
 
   useEffect(() => {
+
     getListPoseInfo()
       .then((res) => {
         console.log(res.data.infoData);
@@ -67,7 +69,7 @@ let InfoPose = () => {
 
   let changePage = (page) => {
     axios
-      .get(`${server.url}/infopose?page=${page}&perPage=6`, {})
+      .get(`${server.url}/infopose?page=${page}&perPage=8`,{})
       .then((res) => {
         console.log(res);
         setModalData(res.data.infoData); //일기장 가져온거 넣기
@@ -101,7 +103,7 @@ let InfoPose = () => {
             {Array.isArray(modalData)
               ? modalData.map((data, index) => (
                 <Col>
-                  <Card key={index} style={{ width: "17rem", display: "block", margin : "auto" , backgroundColor: "#f1f1f1"}} border="dark">
+                  <Card key={index} style={{ width: "17rem", display: "flex", margin : "auto" , backgroundColor: "#f1f1f1"}} border="dark">
                     <Card.Header style={{backgroundColor: "white"}}>
                       {data.num}.{data.name}
                     </Card.Header>
@@ -215,7 +217,7 @@ let InfoPose = () => {
                       <a
                         className="page-link"
                         onClick={() => {
-                          changePage(page.totalPage);
+                          changePage(page.totalPage)
                         }}
                         aria-label="Next"
                       >
