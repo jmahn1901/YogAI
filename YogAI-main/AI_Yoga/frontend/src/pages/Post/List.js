@@ -135,8 +135,8 @@ let List = () => {
             <section className="py-5 text-center container">
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
-                        <h1 className="fw-light">Daily List</h1>
-                        <p className="lead text-muted">나만의 게시글을 작성하세요.</p>
+                        <h1 className="fw-light">인증 게시판</h1>
+                        <p className="lead text-muted">나의 요가 자세를 공유해보세요!</p>
                         <div>
                             <button className="btn btn-primary"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => {
@@ -174,16 +174,30 @@ let List = () => {
                                         {
                                             // 이미지가 존재하지 않을경우 안보여줌
                                             data.url === "" ? (<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATQAAACjCAMAAAAzSxLiAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDTAMS/AAE4hXR0AAAAAElFTkSuQmCC" />) : (
-                                                <img className="card-img-top" style={{ width: '100%' }} alt="게시글 사진" src={data.url} />
+                                                <img className="card-img-top" 
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#dailyModal"
+                                                onClick={() => { detailDaily(data) }}
+                                                style={{ width: '100%', height:'184px', cursor: 'pointer' }} alt="게시글 사진" src={data.url} />
                                             )
+                                            
                                         }
                                         <div className="card-body">
                                             <h5 className="card-title"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#dailyModal"
-                                                onClick={() => { detailDaily(data) }}>{data.title}</h5>
-                                            <p className="card-text">{data.content.substring(0, ((data.content).length / 2))} &nbsp;&nbsp;
-                                            </p>
+                                                // data-bs-toggle="modal"
+                                                // data-bs-target="#dailyModal"
+                                                // onClick={() => { detailDaily(data) }}>{data.title}</h5>
+                                                >{data.title}</h5>
+                                                
+                                            {/* 수정 전 내용 */}
+                                            {/* <p className="card-text">{data.content.substring(0, ((data.content).length / 2))} &nbsp;&nbsp;</p> */}
+                                            {/* 수정 후 내용 */}
+                                            
+                                            <p className="card-text">
+                                                {
+                                                    // data.content === "" ? (data.content).length > 15
+                                                data.content.substring(0, ((data.content).length / 2.5))} &nbsp;&nbsp;</p>
+                                                {/* }</p> */}
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="btn-group">
                                                     <button type="button"

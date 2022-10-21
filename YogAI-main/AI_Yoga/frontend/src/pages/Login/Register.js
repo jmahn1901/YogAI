@@ -46,7 +46,7 @@ const Register = () => {
 
     
     if (!emailValueCheck) {
-      alert("이메일 제대로 입력 좀...")
+      alert("이메일 형식을 알맞게 입력해주세요.")
       setRegisterData({
         email: "",
         password: document.getElementById("password").value,
@@ -57,16 +57,16 @@ const Register = () => {
       //email input에 포커스
       document.getElementById("email").focus();
       //에러 메시지를 보여주고
-      setErrorMsg("이메일 제대로 입력 좀...");
+      setErrorMsg("이메일 형식이 올바르지 않습니다.");
       return;
     }
     else if (registerData.nickname === undefined || registerData.nickname.length === 0) {
-      alert("닉네임 한글자라도 좀...")
+      alert("닉네임을 한 글자이상 입력해주세요.")
       return
     }
     else if (!passwordValueCheck1) {
       console.log(passwordValueCheck1)
-      alert("pwd 제대로 입력 좀...")
+      alert("비밀번호를 제대로 입력해주세요.")
 
       setRegisterData({
         email: document.getElementById("email").value,
@@ -78,11 +78,11 @@ const Register = () => {
       // password input에 포커스
       document.getElementById("password").focus();
       // 에러 메시지를 보여주고
-      setErrorMsg("pwd 제대로 입력 좀...");
+      setErrorMsg("1차 패스워드를 형식을 알맞게 입력해주세요.");
       return
     }
     else if (!passwordValueCheck2) {
-      alert("2차 pwd 제대로 입력 좀...")
+      alert("2차 패스워드를 형식을 알맞게 입력해주세요.")
       setRegisterData({
         email: document.getElementById("email").value,
         password: "",
@@ -93,11 +93,11 @@ const Register = () => {
       // 2차 password input에 포커스
       document.getElementById("password").focus();
       // 에러 메시지를 보여주고
-      setErrorMsg("2차 pwd 제대로 입력 좀...");
+      setErrorMsg("2차 패스워드를 형식을 알맞게 입력해주세요.");
       return
     }
     else if (registerData.password !== registerData.repassword) {
-      alert("1차 비번이랑 2차 비번이랑 달라용 호호홍~")
+      alert("1차 비밀번호랑 2차 비밀번호가 다릅니다.")
       setRegisterData({
         email: document.getElementById("email").value,
         password: "",
@@ -108,7 +108,7 @@ const Register = () => {
       // 2차 password input에 포커스
       document.getElementById("password").focus();
       // 에러 메시지를 보여주고
-      setErrorMsg("1차랑 2차 pwd 같게 입력 좀...");
+      setErrorMsg("1차 비밀번호랑 2차 비밀번호가 다릅니다.");
       return
     }
 
@@ -133,19 +133,19 @@ const Register = () => {
             <form action="#">
               <div class="form-field">
                 <label htmlFor="email">이메일</label>
-                <input type="email" class="form-control" value={registerData.email} onChange={changeInputData} name="email" id="email" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="email" class="form-control" value={registerData.email} onChange={changeInputData} name="email" id="email" placeholder='example@example.com' style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field">
                 <label htmlFor="nickName">닉네임</label>
-                <input type="text" class="form-control" value={registerData.nickname} onChange={changeInputData} name="nickname" id="nickName" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="text" class="form-control" value={registerData.nickname} onChange={changeInputData} name="nickname" id="nickName" placeholder='example' style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field">
                 <label htmlFor="password">비밀번호</label>
-                <input type="password" class="form-control" value={registerData.password} onChange={changeInputData} name="password" id="password" style={{marginTop: "10px", marginBottom: "20px"}} />
+                <input type="password" class="form-control" value={registerData.password} onChange={changeInputData} name="password" id="password" placeholder='Example123@' style={{marginTop: "10px", marginBottom: "20px"}} />
               </div>
               <div class="form-field" style={{paddingBottom: "30px"}}>
                 <label htmlFor="rePassword">비밀번호 확인</label>
-                <input type="password" class="form-control" value={registerData.repassword} onChange={changeInputData} name="repassword" id="rePassword" style={{marginTop: "10px", marginBottom: "5px"}} />
+                <input type="password" class="form-control" value={registerData.repassword} onChange={changeInputData} name="repassword" id="rePassword" placeholder='Example123@' style={{marginTop: "10px", marginBottom: "5px"}} />
               </div>
               <div className="mb-3">
                     <p className="text-dark">{errorMsg}</p>

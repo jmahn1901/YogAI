@@ -26,30 +26,30 @@ const Footer = () => {
                 <div className="widget">
                   {/* 깃허브 주소용 아이콘 코드 */}
                   <h3>SNS</h3>
-                  <ul className="list-unstyled social" style={{display: "flex", gap: "20px", borderRadius: "30px"}}>
+                  <ul className="list-unstyled social" style={{display: "flex", gap: "30px"}}>
                     <li>
                       <a href="https://github.com/swon95" target='_blank'>
-                        <img style={{height: "50px"}} src= "https://avatars.githubusercontent.com/u/96659041?v=4%22%3E" />
+                        <img style={{height: "50px", borderRadius: "13px"}} src= "https://avatars.githubusercontent.com/u/96659041?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
                       <a href="https://github.com/goodsosbva" target='_blank'>
-                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/62534722?v=4%22%3E" />
+                      <img style={{height: "50px", borderRadius: "13px"}} src="https://avatars.githubusercontent.com/u/62534722?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
                       <a href="https://github.com/zkdk1241" target='_blank'>
-                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/47853679?v=4%22%3E" />
+                      <img style={{height: "50px", borderRadius: "13px"}} src="https://avatars.githubusercontent.com/u/47853679?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
                       <a href="https://github.com/jmahn1901" target='_blank'>
-                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/72716200?v=4%22%3E" />
+                      <img style={{height: "50px", borderRadius: "13px"}} src="https://avatars.githubusercontent.com/u/72716200?v=4%22%3E" />
                       </a>
                     </li>
                     <li>
                       <a href="https://github.com/hidihi" target='_blank'>
-                      <img style={{height: "50px"}} src="https://avatars.githubusercontent.com/u/90600309?v=4%22%3E" />
+                      <img style={{height: "50px", borderRadius: "13px"}} src="https://avatars.githubusercontent.com/u/90600309?v=4%22%3E" />
                       </a>
                     </li>
                     {/* <li>
@@ -83,23 +83,24 @@ const Footer = () => {
   
               <div className="col-lg-3">
                 <div className="widget">
-                  <h3>연락방법</h3>
+                  <h3>이메일</h3>
                   {/* <address>AI 양재 허브</address> */}
                   <ul className="list-unstyled links mb-4">
                     <li>
-                      <a href="tel://11234567890">권현성) goodsosbva@naver.com</a>
+                      {/* <a href="tel://11234567890">권현성 goodsosbva@naver.com</a> */}
+                      <a href="mailto:info@mydomain.com">심상원 shimtkddnjs13@gmail.com</a>
                     </li>
                     <li>
-                      <a href="tel://11234567890">안정미) mkhunter37@gmail.com</a>
+                      <a href="mailto:info@mydomain.com">권현성 goodsosbva@naver.com</a>
                     </li>
                     <li>
-                      <a href="mailto:info@mydomain.com">허다혜) hdh553322@gmail.com</a>
+                      <a href="mailto:info@mydomain.com">양서진 yseojin1010@naver.com</a>
                     </li>
                      <li>
-                      <a href="mailto:info@mydomain.com">양서진) yseojin1010@naver.com</a>
+                      <a href="mailto:info@mydomain.com">안정미 mkhunter37@gmail.com</a>
                     </li>
                      <li>
-                      <a href="mailto:info@mydomain.com">심상원) hdh553322@gmail.com</a>
+                      <a href="mailto:info@mydomain.com">허다혜 hdh553322@gmail.com</a>
                     </li>
                     
                   </ul>
