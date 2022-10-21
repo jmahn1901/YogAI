@@ -135,8 +135,8 @@ let List = () => {
             <section className="py-5 text-center container">
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
-                        <h1 className="fw-light">Daily List</h1>
-                        <p className="lead text-muted">나만의 게시글을 작성하세요.</p>
+                        <h1 className="fw-light">인증 게시판</h1>
+                        <p className="lead text-muted">나의 요가 자세를 공유해보세요!</p>
                         <div>
                             <button className="btn btn-primary"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => {
