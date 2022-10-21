@@ -25,7 +25,7 @@ router.post("/", async (req, res, next) => {
 
         res.json({
             status: true,
-            message: "일기장을 생성하였습니다."
+            message: "게시물이 생성하였습니다."
         })
 
     } catch (e) {
@@ -53,7 +53,7 @@ router.get("/", async (req, res, next) => {
 
     // 6개보다 많으면 그러면 오류를 처리
     if (perPage > 6) {
-        next("최대 6개의 일기장을 보낼 수 있습니다.");
+        next("최대 6개의 게시글을 보낼 수 있습니다.");
         return;
     }
 
@@ -91,7 +91,7 @@ router.post("/:shortId/update", async (req, res, next) => {
 
         res.json({
             status: true,
-            message: "일기장을 수정하였습니다."
+            message: "게시글을 수정하였습니다."
         })
 
     } catch (e) {
@@ -111,7 +111,7 @@ router.post("/:shortId/delete", async (req, res, next) => {
 
         res.json({
             status: true,
-            message: "일기장을 삭제하였습니다."
+            message: "게시글을 삭제하였습니다."
         });
 
     } catch (e) {
