@@ -37,12 +37,12 @@ const Login = () => {
   const loginFunction = async () => {
     
     if (loginData.email.length === 0) {
-      alert("이메일 제대로 입력 좀...");
+      alert("이메일을 알맞게 입력 해주세요.");
       return;
 
     } else if (loginData.password.length === 0) {
       console.log(loginData);
-      alert("pwd 제대로 입력 좀...");
+      alert("패스워드들 알맞게 입력 해주세요.");
       return;
     }
 
@@ -88,6 +88,7 @@ const Login = () => {
                     onChange={changeInputData}
                     style={{ marginTop: "10px", marginBottom: "20px" }}
                     name="email"
+                    placeholder="Example@Example.com"
                   />
                 </div>
                 <div className="form-field">
@@ -100,6 +101,7 @@ const Login = () => {
                     onChange={changeInputData}
                     style={{ marginTop: "10px", marginBottom: "40px" }}
                     name="password"
+                    placeholder="Example123@"
                   />
                 </div>
                 <div className="mb-3">
